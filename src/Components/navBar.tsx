@@ -22,7 +22,7 @@ export default function ResponsiveNavbar() {
       <div className="w-[80%] md:w-[90%] lg:w-[60%] rounded-2xl mx-auto shadow-lg fixed top-1 left-0 right-0 z-50 border-[5px] border-[#0000000D]">
         <nav className="w-full bg-white p-2 rounded-2xl">
           <div className="flex justify-between items-center">
-            <div className="flex justify-center items-center gap-3">
+            <div className="flex justify-center items-center gap-0">
               <img src={logo || "/placeholder.svg"} alt="Logo" className="w-12 h-12 object-contain" />
               <h1 className="text-2xl font-extrabold font-inter bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent">
                 Kombineo
