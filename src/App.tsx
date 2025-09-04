@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import Hero from '../src/Components/hero'
-
 import LandingPage from './Components/LandingPage'
 
 function App() {
