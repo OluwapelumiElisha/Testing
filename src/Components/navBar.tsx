@@ -31,7 +31,7 @@ export default function ResponsiveNavbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8 font-inter">
-              {navigationLinks.map((link, index) => (
+              {navigationLinks.map((link, _index) => (
                 <motion.a
                   key={link.label}
                   href={link.href}

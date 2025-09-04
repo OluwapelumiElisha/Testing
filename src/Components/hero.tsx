@@ -2,6 +2,9 @@ import ticket from '../assets/Vector.svg'
 import path from '../assets/path27.svg'
 import Enter from '../assets/svg10610178807.svg'
 import Enter2 from '../assets/Vector2.svg'
+import Green from '../assets/Button-tiny.svg'
+import image from '../assets/image 64.svg'
+import star from '../assets/Star.svg'
 const hero = () => {
   return (
     <div className="text-center max-w-4xl mx-auto mt-14">
@@ -53,6 +56,30 @@ const hero = () => {
         </button>
       </div>
 
+      <div className='flex justify-center items-center gap-3'>
+          <div className='flex justify-between space-x-2 items-center'>
+            <img src={Green} alt="" />
+            <p className='text-[#5E5E5E] font-inter text-[12px] font-[700]'>Setup en 10 minutes</p>
+          </div>
+           <div className='flex justify-between space-x-2 items-center'>
+            <img src={Green} alt="" />
+            <p className='text-[#5E5E5E] font-inter text-[12px] font-[700]'>Support & migration en 1 clic</p>
+          </div>
+      </div>
+
+      <div className='flex justify-center items-center mt-6 space-x-2'>
+        <img src={image} alt="" />
+        <img src={star} alt="" />
+        <img src={star} alt="" />
+        <img src={star} alt="" />
+        <img src={star} alt="" />
+        <img src={star} alt="" />
+        {/* <img src={star} alt="" /> */}
+      </div>
+
+      <div className='w-[100%] h-[500px] m-auto bg-[#D9D9D9] mt-7 rounded-xl'>
+
+      </div>
     </div>
   )
 }
