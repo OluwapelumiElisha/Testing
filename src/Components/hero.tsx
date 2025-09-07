@@ -10,11 +10,10 @@ import bgImage from "../assets/bg.svg";
 const Hero = () => {
   return (
     <div className='w-full' style={{
-      backgroundImage: `url(${bgImage})`,
+      backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${bgImage})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
-      opacity: '70%'
     }}>
       <div className="text-center max-w-4xl mx-auto">
         <Navbar />
@@ -85,7 +84,7 @@ const Hero = () => {
             {/* <img src={star} alt="" /> */}
           </div>
 
-          <div className='w-[100%] h-[500px] m-auto bg-[#D9D9D9] mt-7 rounded-xl'>
+          <div className='w-[100%] h-[500px] m-auto bg-[#D9D9D9] mt-7 rounded-xl z-50 relative'>
 
           </div>
         </div>
