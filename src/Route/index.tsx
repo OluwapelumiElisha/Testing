@@ -1,15 +1,17 @@
-
+// src/routes/index.js
 import { createBrowserRouter } from "react-router-dom";
 import LandingPage from "../LandingPage";
-// import PricingPage from "../Pricing";
+import PricingPage from "../Pricing";
 
-export const route = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage/>,
-  },{
+    element: <LandingPage />,
+  },
+  {
     path: "/pricing",
-    // element: <PricingPage/>
-    element: <h1>Hello</h1>
-  }
-])
+    element: <PricingPage />,
+  },
+]);
+
+export default router;

@@ -1,5 +1,5 @@
 // import React from 'react'
-// import './index.css'
+import './index.css'
 // import ReactDOM from 'react-dom/client'
 // import { RouterProvider } from 'react-router-dom'
 // import { route } from './Route/index.tsx'
@@ -16,20 +16,15 @@
 // }
 
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./LandingPage/index";
-import PricingPage from "./Pricing/index";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+import router from "./Route/index";
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
-      </Routes>
-    </Router>
-  );
-}
+const rootElement = document.getElementById("root") as HTMLElement;
 
-export default App;
-
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
