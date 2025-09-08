@@ -11,7 +11,7 @@ export default function ResponsiveNavbar() {
   }
 
   const navigationLinks = [
-    { href: "#", label: "Acceuil" },
+    { href: "#", label: "Accueil" },
     { href: "#", label: "Features" },
     { href: "/pricing", label: "Pricing" },
     { href: "#", label: "About" },

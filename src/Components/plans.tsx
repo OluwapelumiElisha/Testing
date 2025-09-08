@@ -103,7 +103,7 @@ const PricingSection: React.FC = () => {
                         <p className="text-sm text-[#4C4C4C] text-start">Parfait pour les petites équipes et les startups.</p>
                         <Price amount={29} />
                         <button
-                            className="mt-8 inline-flex justify-center rounded-lg text-white px-4 py-2.5 text-sm font-medium shadow focus:outline-none focus:ring-2 focus:ring-slate-400/40"
+                            className="mt-8 inline-flex justify-center rounded-lg text-white px-4 py-2.5 text-sm font-medium shadow focus:outline-none focus:ring-2 focus:ring-slate-400/40 hover:text-black"
                             style={{
                                 background: "linear-gradient(90deg, #035E71 0%, #5DA9B9 28.37%, #035E71 76.92%)",
                             }}
@@ -162,7 +162,7 @@ const PricingSection: React.FC = () => {
 
                         <button style={{
                                 background: "linear-gradient(90deg, #035E71 0%, #5DA9B9 28.37%, #035E71 76.92%)",
-                            }} className="mt-40 inline-flex justify-center rounded-lg  text-white px-4 py-2.5 text-sm font-medium shadow hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-400/60">
+                            }} className="mt-40 inline-flex justify-center rounded-lg  text-white px-4 py-2.5 text-sm hover:text-black font-medium shadow hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-400/60">
                             Booker une démo
                         </button>
                     </Card>
