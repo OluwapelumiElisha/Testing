@@ -194,19 +194,25 @@ const cards = () => {
           </h1>
 
           {/* Scrolling Cards  */}
-          <div className="mt-12">
+          <div className="relative mt-12">
+            {/* Fading effect overlays */}
+            <div className="pointer-events-none absolute inset-0 z-10">
+              <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent"></div>
+              <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent"></div>
+            </div>
+
+            {/* First row */}
             <div className="overflow-hidden w-full">
               <motion.div
                 className="flex space-x-10 !w-[200%] ml-14"
-                variants={{}} // Added empty variants prop to satisfy type requirement
-                animate={{ x: ["0%", "-50%"] }} // scroll left
+                variants={{}}
+                animate={{ x: ["0%", "-50%"] }}
                 transition={{
-                  duration: 25, // speed
+                  duration: 25,
                   ease: "linear",
                   repeat: Infinity,
                 }}
               >
-                {/* Repeat cards twice for seamless scrolling */}
                 {[...Array(1)].map((_, index) => (
                   <div key={index} className="flex space-x-10">
                     {cardTop.map((card, idx) => (
@@ -214,12 +220,11 @@ const cards = () => {
                     ))}
                   </div>
                 ))}
-
-
               </motion.div>
             </div>
 
-            <div className="overflow-hidden w-full mt-6 ">
+            {/* Second row */}
+            <div className="overflow-hidden w-full mt-6">
               <motion.div
                 className="flex space-x-10 !w-[200%] mr-14"
                 variants={{}}
@@ -237,11 +242,10 @@ const cards = () => {
                     ))}
                   </div>
                 ))}
-
-
               </motion.div>
             </div>
           </div>
+
 
           {/* Scrolling Cards  */}
 
@@ -271,7 +275,7 @@ const cards = () => {
         >
           {/* LEFT SIDE */}
           <div className="relative w-full sm:w-auto flex-1"
-          
+
           >
             <h1 className="relative text-lg sm:text-2xl md:text-3xl lg:text-[30.77px] font-geist font-semibold mb-4 text-start">
               {active === "bonjour" ? (

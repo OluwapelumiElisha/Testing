@@ -135,7 +135,7 @@ const TabCard: React.FC = () => {
                   ✓
                 </span> */}
                                 <img src={container} alt="" />
-                                <span className="text-[#4C4C4C] font-medium">{item}</span>
+                                <span className="text-[#4C4C4C] font-medium lg:text-[16px] md:text-[16px] sm:text-[16px] text-[12px]">{item}</span>
                             </li>
                         ))}
                     </ul>
