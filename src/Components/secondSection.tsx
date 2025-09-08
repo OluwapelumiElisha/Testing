@@ -8,7 +8,7 @@ import ticket from '../assets/Group.svg'
 import secondticket from '../assets/Vector.svg'
 import line from '../assets/RM7SroEIrEIxZGjpGsUOazxF4.svg fill.svg'
 import image from '../assets/Image → QoTZyI7CkM97mFm0elr4g0yNc.svg.svg'
-import image2 from '../assets/8BXeBQObnslmzSi9htBC7WTLXM.svg fill.svg'
+// import image2 from '../assets/8BXeBQObnslmzSi9htBC7WTLXM.svg fill.svg'
 import { useEffect, useRef, useState } from "react";
 import Enter2 from '../assets/Vector2.svg'
 import app from '../assets/apps_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24 1.svg'

@@ -10,7 +10,7 @@ import bgImage from "../assets/bg.svg";
 const Hero = () => {
   return (
     <div className='w-full' style={{
-      backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${bgImage})`,
+      backgroundImage: `url(${bgImage})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
