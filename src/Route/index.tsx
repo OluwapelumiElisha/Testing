@@ -9,6 +9,7 @@ export const route = createBrowserRouter([
     element: <LandingPage/>,
   },{
     path: "/pricing",
-    element: <PricingPage/>
+    // element: <PricingPage/>
+    element: <h1>Hello</h1>
   }
 ])
