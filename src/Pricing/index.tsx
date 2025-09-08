@@ -1,4 +1,4 @@
-import React from 'react'
+
 import PricingHero from '../Components/pricingHero'
 import FaqSection from '../Components/faq'
 const index = () => {

@@ -1,4 +1,4 @@
-// import Sig
+
 import { createBrowserRouter } from "react-router-dom";
 import LandingPage from "../LandingPage";
 import PricingPage from "../Pricing/index";
