@@ -13,7 +13,7 @@ export default function ResponsiveNavbar() {
   const navigationLinks = [
     { href: "#", label: "Acceuil" },
     { href: "#", label: "Features" },
-    { href: "#", label: "Pricing" },
+    { href: "/pricing", label: "Pricing" },
     { href: "#", label: "About" },
   ]
 
@@ -81,13 +81,13 @@ export default function ResponsiveNavbar() {
 
             {/* Desktop CTA Button */}
             <button
-  className="hidden md:block text-white px-6 py-2 rounded-lg font-medium shadow-md transition-colors cursor-pointer"
-  style={{
-    background: "linear-gradient(to right, #035E71, #5DA9B9, #035E71)",
-  }}
->
-  Demander une démo
-</button>
+              className="hidden md:block text-white px-6 py-2 rounded-lg font-medium shadow-md transition-colors cursor-pointer"
+              style={{
+                background: "linear-gradient(to right, #035E71, #5DA9B9, #035E71)",
+              }}
+            >
+              Demander une démo
+            </button>
           </div>
 
           {/* Mobile Navigation Menu */}

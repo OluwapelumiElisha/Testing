@@ -54,8 +54,6 @@ const features = [
   },
 ];
 const cards = () => {
-  // const [showBonjour, setShowBonjour] = useState(true);
-  // const [active, setActive] = useState<"bonjour" | "adieu">("bonjour");
   const [active, setActive] = useState<"bonjour" | "adieu">("bonjour");
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -316,7 +314,7 @@ const cards = () => {
         </div>
 
         {/* Pourquoi nos clients nous ont choisis  */}
-        <div className="mt-16" ref={sectionRef}>
+        <div className="mt-16" >
           <h1 className="text-xl md:text-3xl lg:text-5xl font-geist font-semibold mb-3 text-center">
             <span className="bg-[linear-gradient(92.36deg,#000000_1.98%,#7F7F7F_37.95%,#000000_62.94%,#6E6E6E_72.43%,#000000_92.41%,#999999_105.9%)] bg-clip-text text-transparent">
               Pourquoi nos clients
@@ -336,7 +334,7 @@ const cards = () => {
 
 
       </div>
-      <div className="w-[95%] bg-[#def5ff] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter">
+      <div ref={sectionRef} className="w-[95%] bg-[#def5ff] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter">
         {/* MAIN FLEX CONTAINER */}
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start">
           {/* LEFT SECTION (Tabs + Active Content) */}
