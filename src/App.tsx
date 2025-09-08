@@ -1,11 +1,11 @@
-import LandingPage from './LandingPage/index'
+// import LandingPage from './LandingPage/index'
 
 function App() {
   return (
     <>
-     <div>
+     {/* <div>
       <LandingPage></LandingPage>
-     </div>
+     </div> */}
     </>
   )
 }
