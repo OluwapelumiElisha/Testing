@@ -9,53 +9,82 @@ import secondticket from '../assets/Vector.svg'
 import line from '../assets/RM7SroEIrEIxZGjpGsUOazxF4.svg fill.svg'
 import image from '../assets/Image → QoTZyI7CkM97mFm0elr4g0yNc.svg.svg'
 import image2 from '../assets/8BXeBQObnslmzSi9htBC7WTLXM.svg fill.svg'
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Enter2 from '../assets/Vector2.svg'
 import app from '../assets/apps_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24 1.svg'
 import pp from '../assets/image 65.svg'
 import sideImage from '../assets/AI.svg'
 import group from '../assets/Frame 2147224426.svg'
 import bar from '../assets/Frame 2147224427.svg'
- const features = [
-    {
-      title: "Cockpit IA",
-      img: app,
-      description:
-        "Pas de complexité, pas d'étapes inutiles, juste une efficacité pure conçue pour des business high ticket.",
-      author: "Tibtalks, Fondateur Magic consulting",
-    },
-    {
-      title: "Setting appel",
-      img: app,
-      description:
-        "Optimisez vos appels avec un système clair et efficace conçu pour les équipes performantes.",
-      author: "Sophie, Head of Sales",
-    },
-    {
-      title: "Appels Closing",
-      img: app,
-      description:
-        "Concluez vos ventes avec des outils qui simplifient le processus de closing.",
-      author: "Marc, Sales Expert",
-    },
-    {
-      title: "KPI",
-      img: app,
-      description:
-        "Suivez vos KPI en temps réel et ajustez vos stratégies en toute confiance.",
-      author: "Léa, Analyst",
-    },
-    {
-      title: "Commissions",
-      img: app,
-      description:
-        "Gérez facilement les commissions et récompensez vos closers avec précision.",
-      author: "Paul, Finance Manager",
-    },
-  ];
+const features = [
+  {
+    title: "Cockpit IA",
+    img: app,
+    description:
+      "Pas de complexité, pas d'étapes inutiles, juste une efficacité pure conçue pour des business high ticket.",
+    author: "Tibtalks, Fondateur Magic consulting",
+  },
+  {
+    title: "Setting appel",
+    img: app,
+    description:
+      "Optimisez vos appels avec un système clair et efficace conçu pour les équipes performantes.",
+    author: "Sophie, Head of Sales",
+  },
+  {
+    title: "Appels Closing",
+    img: app,
+    description:
+      "Concluez vos ventes avec des outils qui simplifient le processus de closing.",
+    author: "Marc, Sales Expert",
+  },
+  {
+    title: "KPI",
+    img: app,
+    description:
+      "Suivez vos KPI en temps réel et ajustez vos stratégies en toute confiance.",
+    author: "Léa, Analyst",
+  },
+  {
+    title: "Commissions",
+    img: app,
+    description:
+      "Gérez facilement les commissions et récompensez vos closers avec précision.",
+    author: "Paul, Finance Manager",
+  },
+];
 const cards = () => {
   // const [showBonjour, setShowBonjour] = useState(true);
+  // const [active, setActive] = useState<"bonjour" | "adieu">("bonjour");
   const [active, setActive] = useState<"bonjour" | "adieu">("bonjour");
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive("adieu");
+          } else {
+            setActive("bonjour");
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Trigger when 50% of the div is visible
+      }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const [activeIndex, setActiveIndex] = useState(0);
   const cardTop = [
     {
@@ -151,7 +180,7 @@ const cards = () => {
     },
 
   ];
-  
+
   const activeFeature = features[activeIndex];
   return (
     <div className="w-full bg-[#F7FEFF] -mt-40 pb-40">
@@ -237,81 +266,53 @@ const cards = () => {
         </div>
 
         {/* words  */}
-
-        <div className="flex justify-center items-center flex-wrap w-[90%] m-auto">
-          {/* Left Side */}
-          <div className="relative w-full sm:w-auto flex-1">
+        <div
+          className="flex justify-center items-center flex-wrap w-[90%] m-auto"
+        >
+          {/* LEFT SIDE */}
+          <div className="relative w-full sm:w-auto flex-1"
+          
+          >
             <h1 className="relative text-lg sm:text-2xl md:text-3xl lg:text-[30.77px] font-geist font-semibold mb-4 text-start">
-              {/* Bonjour */}
-              <span
-                onClick={() => setActive("bonjour")}
-                className={`cursor-pointer ${active === "bonjour"
-                  ? "bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent"
-                  : "text-[#6E6E6E]"
-                  }`}
-              >
-                Dites bonjour à
-              </span>
-              <br />
-              {/* Adieu */}
-              <span
-                onClick={() => setActive("adieu")}
-                className={`cursor-pointer ${active === "adieu"
-                  ? "bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent"
-                  : "text-[#6E6E6E]"
-                  }`}
-              >
-                Dites adieu à
-              </span>
-
-              {/* Decorative Images */}
+              {active === "bonjour" ? (
+                <span className="bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent">
+                  Dites bonjour à
+                </span>
+              ) : (
+                <span className="text-[#6E6E6E]">Dites adieu à</span>
+              )}
               <img
                 src={image}
-                alt=""
+                alt="Decorative"
                 className="absolute -top-8 sm:-top-16 md:-top-20 left-28 sm:left-36 md:left-44 w-20 sm:w-44 md:w-56"
-              />
-              <img
-                src={image2}
-                alt=""
-                className="absolute -top-1 sm:-top-2 -left-1 sm:-left-2 w-3 sm:w-3.5 md:w-[14px] h-6"
               />
             </h1>
           </div>
 
-          {/* Right Side */}
+          {/* RIGHT SIDE */}
           <div className="flex-1">
             <ul className="font-semibold text-base sm:text-xl md:text-2xl lg:text-[30px] text-start space-y-2 sm:space-y-3">
-              {/* Bonjour List */}
-              <div
-                className={`${active === "bonjour"
-                  ? "bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent"
-                  : "text-[#6E6E6E]"
-                  }`}
-              >
-                <li>Un cockpit centralisé</li>
-                <li>Un suivi des leads optimisés</li>
-                <li>Des KPI en temps réel</li>
-                <li>Des encaissements et commissions claires</li>
-              </div>
-
-              {/* Adieu List */}
-              <div
-                className={`${active === "adieu"
-                  ? "bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent"
-                  : "text-[#6E6E6E]"
-                  }`}
-              >
-                <li>Une dispersion des leads</li>
-                <li>Des relances oubliées</li>
-                <li>Des décisions à l’aveugle</li>
-                <li>Des tableaux de bord incomplets</li>
-              </div>
+              {active === "bonjour" ? (
+                <div className="transition-all duration-700 bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent">
+                  <li>Un cockpit centralisé</li>
+                  <li>Un suivi des leads optimisés</li>
+                  <li>Des KPI en temps réel</li>
+                  <li>Des encaissements et commissions claires</li>
+                </div>
+              ) : (
+                <div className="transition-all duration-700 text-[#6E6E6E]">
+                  <li>Une dispersion des leads</li>
+                  <li>Des relances oubliées</li>
+                  <li>Des décisions à l’aveugle</li>
+                  <li>Des tableaux de bord incomplets</li>
+                </div>
+              )}
             </ul>
           </div>
         </div>
 
         {/* Pourquoi nos clients nous ont choisis  */}
-        <div className="mt-16">
+        <div className="mt-16" ref={sectionRef}>
           <h1 className="text-xl md:text-3xl lg:text-5xl font-geist font-semibold mb-3 text-center">
             <span className="bg-[linear-gradient(92.36deg,#000000_1.98%,#7F7F7F_37.95%,#000000_62.94%,#6E6E6E_72.43%,#000000_92.41%,#999999_105.9%)] bg-clip-text text-transparent">
               Pourquoi nos clients
@@ -345,8 +346,8 @@ const cards = () => {
                     key={index}
                     onClick={() => setActiveIndex(index)}
                     className={`cursor-pointer transition-colors duration-300 ${activeIndex === index
-                        ? "bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent font-semibold"
-                        : "text-[#000000]"
+                      ? "bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent font-semibold"
+                      : "text-[#000000]"
                       }`}
                   >
                     {feature.title}
