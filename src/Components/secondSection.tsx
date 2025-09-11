@@ -7,14 +7,14 @@ import Tabs from './tabs'
 import ticket from '../assets/Group.svg'
 import secondticket from '../assets/Vector.svg'
 import line from '../assets/RM7SroEIrEIxZGjpGsUOazxF4.svg fill.svg'
-import image from '../assets/Image → QoTZyI7CkM97mFm0elr4g0yNc.svg.svg'
+import image from '../assets/Blue.svg'
 // import image2 from '../assets/8BXeBQObnslmzSi9htBC7WTLXM.svg fill.svg'
 import { useEffect, useRef, useState } from "react";
 import Enter2 from '../assets/Vector2.svg'
 import app from '../assets/apps_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24 1.svg'
 import pp from '../assets/image 65.svg'
 import sideImage from '../assets/AI.svg'
-import group from '../assets/Frame 2147224426.svg'
+import group from '../assets/FirstImage.svg'
 import bar from '../assets/Frame 2147224427.svg'
 const features = [
   {
@@ -22,41 +22,42 @@ const features = [
     img: app,
     description:
       "Pas de complexité, pas d'étapes inutiles, juste une efficacité pure conçue pour des business high ticket.",
-    author: "Tibtalks, Fondateur Magic consulting",
+    testimonials: "Tibtalks, Fondateur Magic consulting",
   },
   {
     title: "Setting appel",
     img: app,
     description:
       "Optimisez vos appels avec un système clair et efficace conçu pour les équipes performantes.",
-    author: "Sophie, Head of Sales",
+    testimonials: "Sophie, Head of Sales",
   },
   {
     title: "Appels Closing",
     img: app,
     description:
       "Concluez vos ventes avec des outils qui simplifient le processus de closing.",
-    author: "Marc, Sales Expert",
+    testimonials: "Marc, Sales Expert",
   },
   {
     title: "KPI",
     img: app,
     description:
       "Suivez vos KPI en temps réel et ajustez vos stratégies en toute confiance.",
-    author: "Léa, Analyst",
+    testimonials: "Léa, Analyst",
   },
   {
     title: "Commissions",
     img: app,
     description:
       "Gérez facilement les commissions et récompensez vos closers avec précision.",
-    author: "Paul, Finance Manager",
+    testimonials: "Paul, Finance Manager",
   },
 ];
 const cards = () => {
   const [active, setActive] = useState<"bonjour" | "adieu">("bonjour");
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
+  // useEffect for text switching 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -83,7 +84,57 @@ const cards = () => {
     };
   }, []);
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0)
+  const sectionRefs = useRef<HTMLDivElement>(null)
+  const [isScrolling, setIsScrolling] = useState(false)
+
+  const activeFeature = features[activeIndex]
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRefs.current) return
+
+      const section = sectionRefs.current
+      const rect = section.getBoundingClientRect()
+      const windowHeight = window.innerHeight
+
+      // Check if the section is in viewport
+      const isInViewport = rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.3
+
+      if (isInViewport) {
+        setIsScrolling(true)
+
+        // Calculate scroll progress within the section
+        const sectionHeight = rect.height
+        const scrollProgress = Math.max(0, Math.min(1, (windowHeight * 0.3 - rect.top) / (sectionHeight * 0.8)))
+
+        // Calculate which tab should be active based on scroll progress
+        const newActiveIndex = Math.min(features.length - 1, Math.floor(scrollProgress * features.length))
+
+        setActiveIndex(newActiveIndex)
+      } else {
+        setIsScrolling(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll() // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
+  const handleTabClick = (index: number) => {
+    setActiveIndex(index)
+    setIsScrolling(false)
+
+    // Re-enable scroll behavior after a short delay
+    setTimeout(() => {
+      setIsScrolling(true)
+    }, 1000)
+  }
+
   const cardTop = [
     {
       image: ProfileImage,
@@ -123,7 +174,7 @@ const cards = () => {
       reviewColor: "#000000",
       nameColor: "#035E71",
       roleColor: "#247A8C80",
-      tagTextColor: "#111111",
+      tagTextColor: "#ffffff",
       tagBgColor: "bg-[linear-gradient(98.23deg,#035E71_-6.67%,#5DA9B9_45.08%,#035E71_97.28%)]",
       companyColor: "#035E71E5",
       title2: secondCardLogo,
@@ -148,7 +199,7 @@ const cards = () => {
       reviewColor: "#000000",
       nameColor: "#035E71",
       roleColor: "#247A8C80",
-      tagTextColor: "#111111",
+      tagTextColor: "#ffffff",
       tagBgColor: "bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] to-[#035E71]",
       companyColor: "#035E71E5",
       title2: secondCardLogo,
@@ -178,8 +229,6 @@ const cards = () => {
     },
 
   ];
-
-  const activeFeature = features[activeIndex];
   return (
     <div className="w-full bg-[#F7FEFF] -mt-40 pb-40">
       <div className="text-center max-w-4xl mx-auto mb-20">
@@ -286,7 +335,7 @@ const cards = () => {
               <img
                 src={image}
                 alt="Decorative"
-                className="absolute -top-8 sm:-top-16 md:-top-20 left-28 sm:left-36 md:left-44 w-20 sm:w-44 md:w-56"
+                className="absolute -top-4 sm:-top-12 md:-top-10 left-20 sm:left-36 md:left-34 w-20 sm:w-44 md:w-36"
               />
             </h1>
           </div>
@@ -314,10 +363,12 @@ const cards = () => {
         </div>
 
         {/* Pourquoi nos clients nous ont choisis  */}
-        <div className="mt-16" >
+        <div ref={sectionRef} className="mt-16" >
           <h1 className="text-xl md:text-3xl lg:text-5xl font-geist font-semibold mb-3 text-center">
             <span className="bg-[linear-gradient(92.36deg,#000000_1.98%,#7F7F7F_37.95%,#000000_62.94%,#6E6E6E_72.43%,#000000_92.41%,#999999_105.9%)] bg-clip-text text-transparent">
-              Pourquoi nos clients
+              Pourquoi <span className="bg-[linear-gradient(92.36deg,#000000_1.98%,#7F7F7F_37.95%,#000000_62.94%,#6E6E6E_72.43%,#000000_92.41%,#999999_105.9%)] bg-clip-text text-transparent">
+                nos
+              </span> clients
             </span>
             <br />
             <span>nous ont choisis</span>
@@ -331,51 +382,66 @@ const cards = () => {
           </div>
 
         </div>
-
-
       </div>
-      <div ref={sectionRef} className="w-[95%] bg-[#def5ff] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter">
+      <div
+        ref={sectionRefs}
+        className="w-[95%] bg-[#def5ff] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter min-h-screen"
+      >
         {/* MAIN FLEX CONTAINER */}
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start">
           {/* LEFT SECTION (Tabs + Active Content) */}
           <div className="p-6 sm:p-10 flex flex-col lg:flex-row justify-start gap-6 w-full lg:w-[60%]">
             {/* LEFT SIDE - TABS */}
-            <div className="text-[18px] font-Geist font-medium w-full lg:w-auto">
+            <div className="text-[18px] font-medium w-full lg:w-auto">
               <h3 className="text-[#000000] font-bold">Fonctionnalités</h3>
               <ul className="mt-2 text-[16px] space-y-2">
                 {features.map((feature, index) => (
                   <li
                     key={index}
-                    onClick={() => setActiveIndex(index)}
-                    className={`cursor-pointer transition-colors duration-300 ${activeIndex === index
-                      ? "bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent font-semibold"
-                      : "text-[#000000]"
+                    onClick={() => handleTabClick(index)}
+                    className={`cursor-pointer transition-all duration-500 ease-in-out p-2 text-[18px] font-black rounded-lg ${activeIndex === index
+                        ? "bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent  font-semibold "
+                        : "text-[#9999998A]"
                       }`}
                   >
                     {feature.title}
+                    {activeIndex === index && (
+                      // <div className="w-full h-1 bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] rounded-full mt-1 animate-pulse" />
+                      <></>
+                    )}
                   </li>
                 ))}
               </ul>
+
+              {isScrolling && (
+                <div className="mt-4 text-xs text-[#5DA9B9] animate-bounce"></div>
+              )}
             </div>
 
             {/* RIGHT SIDE - DISPLAY ACTIVE FEATURE */}
             <div className="mt-8 lg:mt-12 max-w-full lg:max-w-md">
-              <img
-                src={activeFeature.img}
-                alt={activeFeature.title}
-                className=""
-              />
-              <h1 className="font-semibold text-[28px] sm:text-[36px] lg:text-[43px] bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent mt-4">
-                {activeFeature.title}
-              </h1>
-              <p className="italic font-inter text-[#757575] mt-8 sm:mt-12 text-[16px] sm:text-[18px] lg:text-[20px]">
-                “{activeFeature.description}”
-              </p>
-              <div className="flex justify-start items-center mt-4 space-x-4">
-                <img src={pp} alt="profile" className="w-10 h-10 rounded-full" />
-                <p className="text-[#5BA7B7] font-inter font-normal text-[14px] sm:text-[16px]">
-                  {activeFeature.author}
+              <div className="transition-all duration-700 ease-in-out transform">
+                <img
+                  src={activeFeature.img || "/placeholder.svg"}
+                  alt={activeFeature.title}
+                  className="rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
+                />
+                <h1 className="font-semibold text-[28px] sm:text-[36px] lg:text-[43px] bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent mt-4 transition-all duration-500">
+                  {activeFeature.title}
+                </h1>
+                <p className="italic font-inter text-[#757575] mt-8 sm:mt-12 text-[16px] sm:text-[18px] lg:text-[20px] transition-all duration-500 leading-relaxed">
+                  "{activeFeature.description}"
                 </p>
+                <div className="flex justify-start items-center mt-4 space-x-4 transition-all duration-500">
+                  <img
+                    src={pp || "/placeholder.svg"}
+                    alt="profile"
+                    className="w-10 h-10"
+                  />
+                  <p className="text-[#5BA7B7] font-inter font-normal text-[14px] sm:text-[16px]">
+                    {activeFeature.testimonials}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -383,18 +449,18 @@ const cards = () => {
           {/* RIGHT IMAGE SECTION */}
           <div className="mt-8 lg:mt-16 w-full lg:w-[40%] mb-4 flex justify-center lg:justify-end">
             <img
-              src={sideImage}
+              src={sideImage || "/placeholder.svg"}
               alt=""
-              className="w-full max-w-[500px] lg:max-w-[913px] h-auto rounded-lg"
+              className="w-full max-w-[500px] lg:max-w-[913px] h-auto "
             />
           </div>
         </div>
 
-
-        <div className="bg-[#F7FEFf] p-6 sm:p-10 rounded-bl-2xl rounded-br-2xl">
-
+        <div className="bg-[#F7FEFf] p-8 sm:p-10 rounded-bl-2xl rounded-br-2xl mt-1">
         </div>
       </div>
+
+      {/* </div> */}
 
       <div className="text-center max-w-4xl mx-auto mt-30">
         <div className="">
@@ -403,13 +469,20 @@ const cards = () => {
               {"Kombineo s’adapte à votre"}
             </span>
             <br />
-            <span>Tunnel de vente,</span><span className="bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent">pas l’inverse.</span>
+            <span>Tunnel de vente, </span><span className="bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent">pas l’inverse.</span>
           </h1>
           <div>
           </div>
         </div>
       </div>
-      <div className="w-[85%] m-auto flex flex-col lg:flex-row justify-between items-center gap-6 mt-8">
+      <motion.div
+        className="w-[85%] m-auto flex flex-col lg:flex-row justify-between items-center gap-6 mt-8"
+        initial={{ opacity: 0, y: 50 }}      // Start hidden & moved down
+        variants={{}}
+        whileInView={{ opacity: 1, y: 0 }}   // Animate in when visible
+        transition={{ duration: 1.5, ease: "easeOut" }} // 🔥 Slower (1.5s)
+        viewport={{ once: true }}            // Animate only once
+      >
         <img
           src={group}
           alt="group"
@@ -420,7 +493,7 @@ const cards = () => {
           alt="bar"
           className="w-full max-w-[470px] h-auto"
         />
-      </div>
+      </motion.div>
 
     </div>
 

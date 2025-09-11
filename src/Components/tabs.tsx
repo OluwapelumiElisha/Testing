@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Infopreneur from '../assets/Vector.svg'
+import Infopreneur from '../assets/White-Flame.svg'
 import Manager from '../assets/Manager.svg'
 import Challenge from '../assets/chan.svg'
 import Agence from '../assets/Agence.svg'
@@ -96,7 +96,7 @@ const TabCard: React.FC = () => {
                     <button
                         key={idx}
                         onClick={() => setActiveIndex(idx)}
-                        className={`px-6 py-4 whitespace-nowrap rounded-lg text-sm font-medium transition flex justify-center gap-2 text-[#111111] border items-center ${idx === activeIndex
+                        className={`px-9 py-4 whitespace-nowrap rounded-lg text-sm font-medium transition flex justify-center gap-2 text-[#111111] border items-center ${idx === activeIndex
                             ? "bg-[linear-gradient(98.23deg,#035E71_-6.67%,#5DA9B9_45.08%,#035E71_97.28%)] text-white"
                             : "bg-gray-50 border-[#E4DFDC] border-[1px] text-gray-600 hover:bg-white"
                             }`}
@@ -110,15 +110,22 @@ const TabCard: React.FC = () => {
 
 
             {/* Content */}
-            <div className="flex flex-col lg:flex-row lg:gap-6 md:gap-6 sm:gap-0 gap-0 w-full pl-5">
+            <div className="flex flex-col lg:flex-row lg:gap-4 md:gap-6 sm:gap-0 gap-0 w-full pl-5">
                 {/* Left Side */}
                 <div className="flex-1 space-y-4">
                     {/* <h2 className="text-2xl font-bold text-gray-900  text-center"></h2> */}
-                    <h2 className="text-2xl font-bold text-gray-900 text-center whitespace-normal break-words">
+                    <h2 className="!text-[40px] font-bold text-gray-900 leading-10 lg:text-start md:text-center text-center sm:text-center">
                         {activeTab.title}
                     </h2>
                     <div className="flex lg:justify-start md:justify-center sm:justify-center justify-center items-center">
-                        <button style={{ background: "radial-gradient(circle, #FFCF72, #E49600)", }} className="lg:mt-10 md:mt-10 sm:mt-5 mt-0 text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300 hover:text-black">
+                        <button
+                            style={{
+                                background:
+                                    "linear-gradient(224.64deg, rgba(228, 150, 0, 0.8) 7.14%, #C88400 90.37%)",
+                                boxShadow: "0 8px 25px rgba(255, 215, 0, 0.6)", // blurry gold shadow
+                            }}
+                            className="lg:mt-10 md:mt-10 sm:mt-5 mt-0 text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 rounded-lg lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 hover:text-black"
+                        >
                             Essai gratuit de 7 jours
                         </button>
                     </div>
@@ -130,7 +137,7 @@ const TabCard: React.FC = () => {
                 <div className="flex-1 space-y-4">
                     <ul className="space-y-3">
                         {activeTab.checklist.map((item, idx) => (
-                            <li key={idx} className="flex items-center space-x-2">
+                            <li key={idx} className="flex items-center space-x-1">
                                 {/* <span className="w-5 h-5 bg-gradient-to-r from-[#5DA9B9] to-[#035E71] text-white flex items-center justify-center rounded-full text-sm">
                   ✓
                 </span> */}

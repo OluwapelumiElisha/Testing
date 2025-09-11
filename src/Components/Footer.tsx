@@ -8,7 +8,7 @@ import whatsapp from '../assets/image 67.svg'
 const Footer = () => {
   return (
     <div
-      className="min-h-scree"
+      className="min-h-screen"
       style={{
         background: "linear-gradient(203.46deg, #5DA9B9 8.86%, #035E71 71.71%)",
       }}
@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="   mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div className="w-[95%]  mx-auto p-6 sm:p-8 lg:p-12 bg-white rounded-2xl sm:rounded-3xl shadow-xl">
           <div className="text-center  space-y-4 sm:space-y-6 lg:space-y-8">
-            <h1 className="font-Geist text-2xl sm:text-3xl md:text-4xl lg:text-8xl xl:text-5xl font-bold text-gray-800 text-balance leading-tight">
+            <h1 className="font-Geist font-semibold text-gray-800 leading-tight lg:text-[70px] md:text-[50px] sm:text-[35px] text-[35px]">
               {'Vous méritez mieux qu’un'} <br />
               <span
                 className="font-bold text-transparent bg-clip-text"
@@ -37,16 +37,16 @@ const Footer = () => {
               Zéro lead perdu, 100% de ventes maîtrisées.
             </p>
             <div className='flex justify-center items-center'>
-                 <button className="bg-[linear-gradient(106.57deg,rgba(228,150,0,0.8)_14.6%,#CA8500_111.87%)] text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300">
-              <span className='text-white text-[14px]  hover:text-black'>Commencez en 1 sec </span>
-              <img src={Enter2} alt="" className='w-[15px] h-[15px]' />
-            </button>
+              <button className="bg-[linear-gradient(106.57deg,rgba(228,150,0,0.8)_14.6%,#CA8500_111.87%)] text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300">
+                <span className='text-white text-[14px]  hover:text-black'>Commencez en 1 sec </span>
+                <img src={Enter2} alt="" className='w-[15px] h-[15px]' />
+              </button>
             </div>
-               
-            
+
+
 
             {/* Connection Diagram */}
-            <div className="mt-8 ml-6 sm:mt-10 lg:mt-12 overflow-hidden ">
+            <div className="mt-8 ml-6 sm:mt-10 lg:-mt-16 overflow-hidden ">
               <div className="w-[200px] sm:w-[350px] md:w-[350px] lg:w-[350px]  m-auto relative ">
                 <div className="flex flex-col w-[200px] sm:w-[350px] md:w-[350px] lg:w-[350px]     py-30 max-md:py-6 sm:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-16 lg:gap-30">
                   {/* Connection Lines - Hidden on mobile, visible on sm+ */}
@@ -93,11 +93,14 @@ const Footer = () => {
               K
             </span>
           </div> */}
-          <img
-            src={klogo}
-            alt=""
-            className="max-[640px]:w-30 max-[640px]:mt-3"
-          />
+          <div className="flex flex-col items-center">
+            <img
+              src={klogo}
+              alt=""
+              className="max-[640px]:w-30 max-[640px]:mt-3"
+            />
+            {/* <div className="w-[50%] m-auto h-[2px] bg-white -mt-20"></div> */}
+          </div>
         </div>
         <div
           className="absolute top-16 z-0"
@@ -112,15 +115,15 @@ const Footer = () => {
       </div>
 
       {/* Footer Section */}
-      <footer className=" text-white py-8 sm:py-12 lg:py-14">
+      <footer className=" text-white py-8 sm:py-12 lg:py-14 font-inter">
         <div className="container  mx-auto px-4 sm:px-6 lg:px-18">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12 justify-center mx-auto max-w-4xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 justify-center mx-auto max-w-5xl">
             {/* Commencez Column */}
             <div className="space-y-3 sm:space-y-4">
               <h3 className="font-inter font-semibold text-[18.75px] leading-[30px] tracking-normal text-left align-middle">
                 <br />
               </h3>
-              <div className="font-inter font-medium text-[16.73px] leading-[27px] align-middle text-[#C2C2C2]  cursor-pointer">
+              <div className="font-inter font-medium text-[14.73px] leading-[28px] align-middle text-[#C2C2C2]  cursor-pointer pt-2">
                 <p>1,000+ sociétés utilisent</p>
                 <p>Kombineo pour optimiser</p>
                 <p>100% de leurs leads</p>
@@ -132,7 +135,7 @@ const Footer = () => {
               <h3 className="font-inter font-semibold text-[18.75px] leading-[30px] tracking-normal text-left align-middle">
                 Commencez
               </h3>
-              <div className="font-inter font-medium text-[16.73px] leading-[27px] align-middle text-[#C2C2C2]  cursor-pointer">
+              <div className="font-inter font-medium text-[14.13px] leading-[40px] align-middle text-[#C2C2C2]  cursor-pointer">
                 <p className="">Obtenir une démo</p>
                 <p className="">Commencez gratuitement</p>
                 <p className="">Sign in</p>
@@ -143,7 +146,7 @@ const Footer = () => {
               <h3 className="font-inter font-semibold text-[18.75px] leading-[30px] tracking-normal text-left align-middle">
                 Kombineo CRM
               </h3>
-              <div className="font-inter font-medium text-[16.73px] leading-[27px] align-middle text-[#C2C2C2]  cursor-pointer">
+              <div className="font-inter font-medium text-[14.73px] leading-[40px] align-middle text-[#C2C2C2]  cursor-pointer">
                 <p>Fonctionnnalités</p>
                 <p>Prix</p>
                 <p>Témoignages</p>
@@ -156,10 +159,10 @@ const Footer = () => {
               <h3 className="font-inter font-semibold text-[18.75px] leading-[30px] tracking-normal text-left align-middle">
                 Contact
               </h3>
-              <div className="font-inter font-medium text-[16.73px] leading-[27px] align-middle text-[#C2C2C2]  cursor-pointer">
+              <div className="font-inter font-medium text-[14.73px] leading-[40px] align-middle text-[#C2C2C2]  cursor-pointer">
                 <p className="">info@kombineo.com</p>
                 <p className="">
-                  <img src={whatsapp}className="w-4 inline" alt="" />
+                  <img src={whatsapp} className="w-4 inline" alt="" />
 
                   <span className="inline"> +33767906858</span>
                 </p>

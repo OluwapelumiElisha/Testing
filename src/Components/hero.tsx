@@ -10,7 +10,7 @@ import bgImage from "../assets/bg.svg";
 const Hero = () => {
   return (
     <div className='w-full' style={{
-      backgroundImage: `url(${bgImage})`,
+      backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0.2)), url(${bgImage})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
@@ -33,11 +33,11 @@ const Hero = () => {
           {/* Main Headline */}
 
           <h1 className="relative text-4xl font-inter md:text-6xl lg:text-7xl font-bold mb-6 text-balance bg-gradient-to-r from-[#000000] via-[#7F7F7F] via-[#000000] via-[#000000] via-[#7F7F7F] to-[#000000] bg-clip-text text-transparent">
-            Parce que Chaque
+            parce que chaque
             <br />
-            <span>Lead</span> <span></span>
+            <span>lead</span> <span></span>
             <span className="bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent">
-              Compte
+              compte
             </span>
             <div>
               <img src={path} alt="" className='absolute top-[98%] right-[18%]' />
@@ -53,9 +53,17 @@ const Hero = () => {
 
           {/* CTA Button */}
           <div className='flex justify-center items-center gap-3'>
-            <button style={{ background: "radial-gradient(circle, #FFCF72, #E49600)", }} className=" text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300">
-              <span className='text-white text-[14px]  hover:text-black'>Essayez gratuitement</span>
-              <img src={Enter2} alt="" className='w-[15px] h-[15px]' />
+            <button
+              style={{
+                background:
+                  "radial-gradient(49.89% 49.89% at 50.11% 87.5%, rgba(228, 150, 0, 0.8) 0%, #C88400 100%)",
+              }}
+              className="text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300"
+            >
+              <span className="text-white text-[14px] hover:text-black">
+                Essayez gratuitement
+              </span>
+              <img src={Enter2} alt="" className="w-[15px] h-[15px]" />
             </button>
             <button className="bg-[#FFFFFF] hover:text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1">
               <span className='bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent hover:text-white text-[14px]'>Voir démo</span>
