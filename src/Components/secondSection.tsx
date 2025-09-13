@@ -324,7 +324,7 @@ const cards = () => {
           <div className="relative w-full sm:w-auto flex-1"
 
           >
-            <h1 className="relative text-lg sm:text-2xl md:text-3xl lg:text-[30.77px] font-geist font-semibold mb-4 text-start">
+            <h1 className="relative text-2xl sm:text-3xl md:text-3xl lg:text-[40.77px] font-geist font-semibold mb-4 text-start">
               {active === "bonjour" ? (
                 <span className="bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent">
                   Dites bonjour à
@@ -335,14 +335,14 @@ const cards = () => {
               <img
                 src={image}
                 alt="Decorative"
-                className="absolute -top-4 sm:-top-12 md:-top-10 left-20 sm:left-36 md:left-34 w-20 sm:w-44 md:w-36"
+                className="absolute -top-4 sm:-top-7 md:-top-10 left-20 sm:left-36 md:left-34 w-20 sm:w-30 md:w-36"
               />
             </h1>
           </div>
 
           {/* RIGHT SIDE */}
           <div className="flex-1">
-            <ul className="font-semibold text-base sm:text-xl md:text-2xl lg:text-[30px] text-start space-y-2 sm:space-y-3">
+            <ul className="font-semibold text-base sm:text-xl md:text-3xl lg:text-[32px] text-start space-y-2 sm:space-y-3">
               {active === "bonjour" ? (
                 <div className="transition-all duration-700 bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent">
                   <li>Un cockpit centralisé</li>
@@ -385,8 +385,9 @@ const cards = () => {
       </div>
       <div
         ref={sectionRefs}
-        className="w-[95%] bg-[#def5ff] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter min-h-screen"
+        className="w-[95%] bg-gradient-to-b from-[#E0F5FF] to-[#F4F7F8] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter min-h-screen"
       >
+
         {/* MAIN FLEX CONTAINER */}
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start">
           {/* LEFT SECTION (Tabs + Active Content) */}
@@ -400,8 +401,8 @@ const cards = () => {
                     key={index}
                     onClick={() => handleTabClick(index)}
                     className={`cursor-pointer transition-all duration-500 ease-in-out p-2 text-[18px] font-black rounded-lg ${activeIndex === index
-                        ? "bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent  font-semibold "
-                        : "text-[#9999998A]"
+                      ? "bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent  font-semibold "
+                      : "text-[#9999998A]"
                       }`}
                   >
                     {feature.title}
@@ -476,7 +477,7 @@ const cards = () => {
         </div>
       </div>
       <motion.div
-        className="w-[85%] m-auto flex flex-col lg:flex-row justify-between items-center gap-6 mt-8"
+        className="w-[75%] m-auto flex flex-col lg:flex-row justify-between items-center gap-8 mt-8 "
         initial={{ opacity: 0, y: 50 }}      // Start hidden & moved down
         variants={{}}
         whileInView={{ opacity: 1, y: 0 }}   // Animate in when visible
@@ -486,12 +487,12 @@ const cards = () => {
         <img
           src={group}
           alt="group"
-          className="w-full max-w-[470px] h-auto"
+          className="lg:w-[47%] md:w-[90%] sm:w-[90%] w-[100%] h-auto"
         />
         <img
           src={bar}
           alt="bar"
-          className="w-full max-w-[470px] h-auto"
+          className="lg:w-[47%] md:w-[90%] sm:w-[90%] w-[100%] h-auto"
         />
       </motion.div>
 

@@ -6,7 +6,7 @@ import Green from '../assets/Button-tiny.svg'
 import image from '../assets/image 64.svg'
 import star from '../assets/Star.svg'
 import Navbar from './navBar'
-import bgImage from "../assets/bg.svg";
+import bgImage from "../assets/NewBg.svg";
 const Hero = () => {
   return (
     <div className='w-full' style={{
@@ -66,7 +66,7 @@ const Hero = () => {
               <img src={Enter2} alt="" className="w-[15px] h-[15px]" />
             </button>
             <button className="bg-[#FFFFFF] hover:text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1">
-              <span className='bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent hover:text-white text-[14px]'>Voir démo</span>
+              <span className='bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent hover:text-black text-[14px]'>Voir démo</span>
               <img src={Enter} alt="" className='w-[25px] h-[25px]' />
             </button>
           </div>
