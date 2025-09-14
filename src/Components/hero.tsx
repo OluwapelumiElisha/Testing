@@ -17,7 +17,7 @@ const Hero = () => {
     }}>
       <div className="text-center max-w-4xl mx-auto">
         <Navbar />
-        <div className='max-w-7xl mx-auto px-4 lg:px-6 pt-40 pb-6'>
+        <div className='max-w-7xl mx-auto px-4 lg:px-6 pt-28 pb-6'>
 
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 backdrop-blur-sm rounded-full text-sm text-[#035E71] mb-8 border border-[#0A8BA6] bg-[#045F721A] font-inter font-medium">
@@ -47,7 +47,7 @@ const Hero = () => {
 
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto text-pretty">
+          <p className="text-md md:text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-pretty">
             Chaque prospect suivi, chaque KPI en direct : Kombineo centralise tout dans un CRM pensé pour les business high-ticket.
           </p>
 
