@@ -42,7 +42,7 @@ const tabsData: Tab[] = [
     {
         label: "Manager",
         image: Manager,
-        title: "Maximisez votre portée",
+                title: "Gagnez du temps, multipliez vos ventes",
         subtitle: "Augmentez vos conversions et atteignez vos clients idéaux.",
         checklist: ["Prise de décisions agiles", "Onboarding sales simplifié", "Prévisionnel et tendance des ventes"],
         review:
@@ -57,7 +57,7 @@ const tabsData: Tab[] = [
     {
         label: "Challenge",
         image: Challenge,
-        title: "Relevez tous vos défis",
+        title: "Gagnez du temps, multipliez vos ventes",
         subtitle: "Conçu pour s'adapter à vos besoins business.",
         checklist: ["Absorbe du volume en instantané", "Système setting avancée", "Follow up chiurgicale sans flou"],
         review: "Un outil puissant qui s'adapte vraiment à mes besoins.",
@@ -71,7 +71,7 @@ const tabsData: Tab[] = [
     {
         label: "Agence",
         image: Agence,
-        title: "Relevez tous vos défis",
+        title: "Gagnez du temps, multipliez vos ventes",
         subtitle: "Conçu pour s'adapter à vos besoins business.",
         checklist: ["Aide à la vente et à l’upsell", "Optimisation du CA clients", "Marketing suivi en temps réel"],
         review: "Un outil puissant qui s'adapte vraiment à mes besoins.",
@@ -110,70 +110,72 @@ const TabCard: React.FC = () => {
 
 
             {/* Content */}
-            <div className="flex flex-col lg:flex-row lg:gap-4 md:gap-6 sm:gap-0 gap-0 w-full pl-5">
+            <div className="flex flex-col lg:flex-row lg:gap-0 md:gap-6 sm:gap-0 gap-0 w-full pl-5">
                 {/* Left Side */}
                 <div className="flex-1 space-y-4">
                     {/* <h2 className="text-2xl font-bold text-gray-900  text-center"></h2> */}
-                    <h2 className="!text-[40px] font-bold text-gray-900 leading-10 lg:text-start md:text-center text-center sm:text-center">
-                        {activeTab.title}
-                    </h2>
-                    <div className="flex lg:justify-start md:justify-center sm:justify-center justify-center items-center">
-                        <button
-                            style={{
-                                background:
-                                    "linear-gradient(224.64deg, rgba(228, 150, 0, 0.8) 7.14%, #C88400 90.37%)",
-                                boxShadow: "0 8px 25px rgba(255, 215, 0, 0.6)", // blurry gold shadow
-                            }}
-                            className="lg:mt-10 md:mt-10 sm:mt-5 mt-0 text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 rounded-lg lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 hover:text-black"
-                        >
-                            Essai gratuit de 7 jours
-                        </button>
-                    </div>
-                    {/* <p className="text-gray-700">{activeTab.subtitle}</p> */}
-
+                    <h2
+                        className="lg:text-[32px] md:text-[32px] sm:text-[32px] text-[25px] font-bold leading-10 lg:text-start md:text-center text-center sm:text-center bg-[linear-gradient(99.96deg,#111111_-1.71%,#777777_89.24%)] bg-clip-text text-transparent"
+                    >
+                    {activeTab.title}
+                </h2>
+                <div className="flex lg:justify-start md:justify-center sm:justify-center justify-center items-center">
+                    <button
+                        style={{
+                            background:
+                                "linear-gradient(224.64deg, rgba(228, 150, 0, 0.8) 7.14%, #C88400 90.37%)",
+                            boxShadow: "0 8px 25px rgba(255, 215, 0, 0.3)", // blurry gold shadow
+                        }}
+                        className="lg:mt-10 md:mt-10 sm:mt-5 mt-0 text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 rounded-lg lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 hover:text-black"
+                    >
+                        Essai gratuit de 7 jours
+                    </button>
                 </div>
+                {/* <p className="text-gray-700">{activeTab.subtitle}</p> */}
 
-                {/* Right Side */}
-                <div className="flex-1 space-y-4">
-                    <ul className="space-y-3">
-                        {activeTab.checklist.map((item, idx) => (
-                            <li key={idx} className="flex items-center space-x-1">
-                                {/* <span className="w-5 h-5 bg-gradient-to-r from-[#5DA9B9] to-[#035E71] text-white flex items-center justify-center rounded-full text-sm">
+            </div>
+
+            {/* Right Side */}
+            <div className="flex-1 space-y-4 lg:-ml-5 md:-ml-5 sm:-ml-5 -ml-0">
+                <ul className="space-y-3">
+                    {activeTab.checklist.map((item, idx) => (
+                        <li key={idx} className="flex items-center space-x-1">
+                            {/* <span className="w-5 h-5 bg-gradient-to-r from-[#5DA9B9] to-[#035E71] text-white flex items-center justify-center rounded-full text-sm">
                   ✓
                 </span> */}
-                                <img src={container} alt="" />
-                                <span className="text-[#4C4C4C] font-medium lg:text-[16px] md:text-[16px] sm:text-[16px] text-[12px]">{item}</span>
-                            </li>
-                        ))}
-                    </ul>
+                            <img src={container} alt="" />
+                            <span className="text-[#4C4C4C] font-medium lg:text-[16px] md:text-[16px] sm:text-[16px] text-[12px]">{item}</span>
+                        </li>
+                    ))}
+                </ul>
 
-                    {/* Testimonial */}
-                    <div className="lg:flex md:flex sm:flex block justify-center items-start gap-3 border-t border-[#F1F0EE] pt-4 mt-4">
-                        <img
-                            src={activeTab.reviewerImage}
-                            alt={activeTab.reviewer}
-                            className="w-16 h-auto rounded-full object-cover"
-                        />
-                        <div className="flex-1">
-                            <p className="text-gray-800 font-semibold text-start">{activeTab.reviewer}</p>
-                            <p className="text-sm text-gray-500 text-start">
-                                {activeTab.role} @ {activeTab.company}
-                            </p>
-                            <p className="text-sm italic text-gray-600 mt-1 text-start">
-                                "{activeTab.review}"
-                            </p>
-                        </div>
-                        {/* {activeTab.logo && (
+                {/* Testimonial */}
+                <div className="lg:flex md:flex sm:flex block justify-center items-start gap-3 border-t border-[#F1F0EE] pt-2 mt-4">
+                    <img
+                        src={activeTab.reviewerImage}
+                        alt={activeTab.reviewer}
+                        className="w-16 h-auto rounded-full object-cover pt-6"
+                    />
+                    <div className="flex-1">
+                        <p className="text-gray-800 font-semibold text-start">{activeTab.reviewer}</p>
+                        <p className="text-sm text-gray-500 text-start">
+                            {activeTab.role} @ {activeTab.company}
+                        </p>
+                        <p className="text-sm italic text-gray-600 mt-1 text-start">
+                            "{activeTab.review}"
+                        </p>
+                    </div>
+                    {/* {activeTab.logo && (
                             <img
                                 src={activeTab.logo}
                                 alt="logo"
                                 className="w-16 h-auto object-contain"
                             />
                         )} */}
-                    </div>
                 </div>
             </div>
         </div>
+        </div >
     );
 };
 

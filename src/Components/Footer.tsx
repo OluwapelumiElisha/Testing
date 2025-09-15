@@ -236,12 +236,12 @@ const Footer = () => {
               <div className="font-inter font-medium text-[15.67px] leading-[25.5px] tracking-normal align-middle text-[#C2C2C2]">
                 © 2025 Kombineo. All rights reserved.
               </div>
-
+              <div className="bg-[#042E49] px-3 py-1 rounded-full text-xs sm:text-sm flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                All Systems Operational
+              </div>
               <div className="flex items-center gap-4 sm:gap-6">
-                <div className="bg-[#042E49] px-3 py-1 rounded-full text-xs sm:text-sm flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                  All Systems Operational
-                </div>
+               
 
                 <div className="flex gap-4 text-xs sm:text-sm text-teal-200">
                   <span className="font-inter font-medium text-[15.67px] leading-[25.5px] tracking-normal align-middle text-[#C2C2C2]">

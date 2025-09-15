@@ -5,7 +5,7 @@ import secondCardLogo from '../assets/image 63.svg'
 import { motion } from "framer-motion";
 import Tabs from './tabs'
 import ticket from '../assets/Group.svg'
-import secondticket from '../assets/Vector.svg'
+import secondticket from '../assets/White-Flame.svg'
 import line from '../assets/RM7SroEIrEIxZGjpGsUOazxF4.svg fill.svg'
 import image from '../assets/Blue.svg'
 // import image2 from '../assets/8BXeBQObnslmzSi9htBC7WTLXM.svg fill.svg'
@@ -427,10 +427,11 @@ const cards = () => {
                   alt={activeFeature.title}
                   className="rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
                 />
-                <h1 className="font-semibold text-[28px] sm:text-[36px] lg:text-[43px] bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent mt-4 transition-all duration-500">
+                <h1 className="font-bold text-[28px] sm:text-[36px] lg:text-[43px] bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent mt-4 transition-all duration-500">
                   {activeFeature.title}
                 </h1>
-                <p className="italic font-inter text-[#757575] mt-8 sm:mt-12 text-[16px] sm:text-[18px] lg:text-[20px] transition-all duration-500 leading-relaxed">
+                <p className="font-semibold mt-3 text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p className="italic font-inter text-[#757575] mt-4 sm:mt-8 text-[16px] sm:text-[18px] lg:text-[20px] transition-all duration-500 leading-relaxed">
                   "{activeFeature.description}"
                 </p>
                 <div className="flex justify-start items-center mt-4 space-x-4 transition-all duration-500">
@@ -477,7 +478,7 @@ const cards = () => {
         </div>
       </div>
       <motion.div
-        className="w-[75%] m-auto flex flex-col lg:flex-row justify-between items-center gap-8 mt-8 "
+        className="w-[75%] m-auto flex flex-col lg:flex-row justify-center gap-4 items-center mt-8 "
         initial={{ opacity: 0, y: 50 }}      // Start hidden & moved down
         variants={{}}
         whileInView={{ opacity: 1, y: 0 }}   // Animate in when visible
