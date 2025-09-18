@@ -4,10 +4,10 @@ import firstCardLogo from '../assets/image 62.svg'
 import secondCardLogo from '../assets/image 63.svg'
 import { motion } from "framer-motion";
 import Tabs from './tabs'
-import ticket from '../assets/Group.svg'
+import ticket from '../assets/whitebgflame.svg'
 import secondticket from '../assets/White-Flame.svg'
 import line from '../assets/RM7SroEIrEIxZGjpGsUOazxF4.svg fill.svg'
-import image from '../assets/Blue.svg'
+import image from '../assets/ArrowGradient.svg'
 // import image2 from '../assets/8BXeBQObnslmzSi9htBC7WTLXM.svg fill.svg'
 import { useEffect, useRef, useState } from "react";
 import Enter2 from '../assets/Vector2.svg'
@@ -56,7 +56,7 @@ const features = [
 const cards = () => {
   const [active, setActive] = useState<"bonjour" | "adieu">("bonjour");
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
+  const featuresRef = useRef<HTMLDivElement | null>(null);
   // useEffect for text switching 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -180,6 +180,50 @@ const cards = () => {
       title2: secondCardLogo,
       ticket: secondticket
     },
+    {
+      image: ProfileImage,
+      highlight: "3x",
+      title: "plus de productivité",
+      review:
+        "Un plaisir de travailler avec Tom et des résultats exceptionnels pour une premiere collaboration.",
+      name: "Yomi Denzel",
+      role: "CEO",
+      company: "Mindeo",
+      tag: "Infopreneur",
+      bgColor: "#FFFFFF",
+      highlightColor: "#035E71",
+      titleColor: "#0000004D",
+      reviewColor: "#000000",
+      nameColor: "#035E71",
+      roleColor: "#247A8C80",
+      tagTextColor: "#ffffff",
+      tagBgColor: "bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] to-[#035E71]",
+      companyColor: "#035E71E5",
+      title2: secondCardLogo,
+      ticket: secondticket
+    },
+    {
+      image: ProfileImage,
+      highlight: "3x",
+      title: "plus de productivité",
+      review:
+        "Un plaisir de travailler avec Tom et des résultats exceptionnels pour une premiere collaboration.",
+      name: "Yomi Denzel",
+      role: "CEO",
+      company: "Mindeo",
+      tag: "Infopreneur",
+      bgColor: "bg-gradient-to-r from-[#5DA9B9] via-[#035E71] to-[#035E71]",
+      highlightColor: "#ffffff",
+      titleColor: "#B9F3FFCC",
+      reviewColor: "#ffffff",
+      nameColor: "#ffffff",
+      roleColor: "#FFFFFF80",
+      tagTextColor: "#111111",
+      tagBgColor: "#FFFFFF",
+      companyColor: "#FFFFFFE5",
+      title2: firstCardLogo,
+      ticket: ticket
+    },
   ];
 
   const cardBelow = [
@@ -227,8 +271,53 @@ const cards = () => {
       title2: firstCardLogo,
       ticket: ticket
     },
-
+    {
+      image: ProfileImage,
+      highlight: "3x",
+      title: "plus de productivité",
+      review:
+        "Un plaisir de travailler avec Tom et des résultats exceptionnels pour une premiere collaboration.",
+      name: "Yomi Denzel",
+      role: "CEO",
+      company: "Mindeo",
+      tag: "Infopreneur",
+      bgColor: "bg-gradient-to-r from-[#5DA9B9] via-[#035E71] to-[#035E71]",
+      highlightColor: "#ffffff",
+      titleColor: "#B9F3FFCC",
+      reviewColor: "#ffffff",
+      nameColor: "#ffffff",
+      roleColor: "#FFFFFF80",
+      tagTextColor: "#111111",
+      tagBgColor: "#FFFFFF",
+      companyColor: "#FFFFFFE5",
+      title2: firstCardLogo,
+      ticket: ticket
+    },
+    {
+      image: ProfileImage,
+      highlight: "3x",
+      title: "plus de productivité",
+      review:
+        "Un plaisir de travailler avec Tom et des résultats exceptionnels pour une premiere collaboration.",
+      name: "Yomi Denzel",
+      role: "CEO",
+      company: "Mindeo",
+      tag: "Infopreneur",
+      bgColor: "#FFFFFF",
+      highlightColor: "#035E71",
+      titleColor: "#0000004D",
+      reviewColor: "#000000",
+      nameColor: "#035E71",
+      roleColor: "#247A8C80",
+      tagTextColor: "#ffffff",
+      tagBgColor: "bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] to-[#035E71]",
+      companyColor: "#035E71E5",
+      title2: secondCardLogo,
+      ticket: secondticket
+    },
   ];
+
+
   return (
     <div className="w-full bg-[#F7FEFF] -mt-40 pb-40">
       <div className="text-center max-w-4xl mx-auto mb-20">
@@ -251,7 +340,7 @@ const cards = () => {
             {/* First row */}
             <div className="overflow-hidden w-full">
               <motion.div
-                className="flex space-x-10 !w-[200%] ml-14"
+                className="flex space-x-10 !w-[300%] ml-14"
                 variants={{}}
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{
@@ -273,7 +362,7 @@ const cards = () => {
             {/* Second row */}
             <div className="overflow-hidden w-full mt-6">
               <motion.div
-                className="flex space-x-10 !w-[200%] mr-14"
+                className="flex space-x-10 !w-[300%] mr-14"
                 variants={{}}
                 animate={{ x: ["-50%", "0%"] }}
                 transition={{
@@ -335,7 +424,7 @@ const cards = () => {
               <img
                 src={image}
                 alt="Decorative"
-                className="absolute -top-4 sm:-top-7 md:-top-10 left-20 sm:left-36 md:left-34 w-20 sm:w-30 md:w-36"
+                className="absolute -top-14 sm:-top-20 md:-top-24 left-20 sm:left-36 md:left-34 w-20 sm:w-30 md:w-36"
               />
             </h1>
           </div>
@@ -374,7 +463,9 @@ const cards = () => {
             <span>nous ont choisis</span>
           </h1>
           <p className="text-center text-[#757575]">{"Et obtiennent en moyenne 20% de croissance après 30 jours de prise en main"}</p>
-          <div className="flex justify-center items-center mt-10">
+          <div
+            id="features"
+            className="flex justify-center items-center mt-10">
             <button className="bg-[linear-gradient(106.57deg,rgba(228,150,0,0.8)_14.6%,#CA8500_111.87%)] text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300">
               <span className='text-white text-[14px]  hover:text-black'>Essayez gratuitement</span>
               <img src={Enter2} alt="" className='w-[15px] h-[15px]' />
@@ -385,11 +476,11 @@ const cards = () => {
       </div>
       <div
         ref={sectionRefs}
-        className="w-[95%] bg-gradient-to-b from-[#E0F5FF] to-[#F4F7F8] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter min-h-screen"
+        className="w-[95%] bg-gradient-to-b from-[#E0F5FF] to-[#F4F7F8] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter "
       >
 
         {/* MAIN FLEX CONTAINER */}
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start">
+        <div ref={featuresRef} className="flex flex-col lg:flex-row justify-between items-center lg:items-start">
           {/* LEFT SECTION (Tabs + Active Content) */}
           <div className="p-6 sm:p-10 flex flex-col lg:flex-row justify-start gap-6 w-full lg:w-[60%]">
             {/* LEFT SIDE - TABS */}
@@ -458,8 +549,8 @@ const cards = () => {
           </div>
         </div>
 
-        <div className="bg-[#F7FEFf] p-8 sm:p-10 rounded-bl-2xl rounded-br-2xl mt-1">
-        </div>
+        {/* <div className="bg-[#F7FEFf] p-8 sm:p-10 rounded-bl-2xl rounded-br-2xl mt-1">
+        </div> */}
       </div>
 
       {/* </div> */}

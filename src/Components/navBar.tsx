@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import logo from '../assets/Auto Layout Horizontal.svg'
+import { Link } from "react-router-dom";
 export default function ResponsiveNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -11,11 +12,17 @@ export default function ResponsiveNavbar() {
   }
 
   const navigationLinks = [
-    { href: "#", label: "Accueil" },
-    { href: "#", label: "Features" },
-    { href: "/pricing", label: "Pricing" },
-    { href: "#", label: "About" },
+    { href: "/", label: "Accueil" },
+    { href: "", label: "Features" },
+    { href: "/pricing", label: "Prix" },
   ]
+
+  const scrollToFeatures = () => {
+    const headingElement = document.getElementById("features");
+    if (headingElement) {
+      headingElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="w-full relative">
@@ -23,10 +30,14 @@ export default function ResponsiveNavbar() {
         <nav className="w-full bg-white p-2 rounded-2xl">
           <div className="flex justify-between items-center">
             <div className="flex justify-center items-center gap-0">
-              <img src={logo || "/placeholder.svg"} alt="Logo" className="w-12 h-12 object-contain" />
-              <h1 className="text-2xl font-extrabold font-inter bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent">
-                Kombineo
-              </h1>
+              <Link to={'/'}>
+                <img src={logo || "/placeholder.svg"} alt="Logo" className="w-12 h-12 object-contain" />
+              </Link>
+              <Link to="/">
+                <h1 className="text-2xl font-extrabold font-inter bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent cursor-pointer">
+                  Kombineo
+                </h1>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -35,6 +46,12 @@ export default function ResponsiveNavbar() {
                 <motion.a
                   key={link.label}
                   href={link.href}
+                  onClick={(e) => {
+                    if (link.label === "Features") {
+                      e.preventDefault();
+                      scrollToFeatures()
+                    }
+                  }}
                   className="text-gray-600 hover:text-gray-900 transition-colors bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -105,6 +122,14 @@ export default function ResponsiveNavbar() {
                   {navigationLinks.map((link, index) => (
                     <motion.a
                       key={link.label}
+                      onClick={(e) => {
+                        if (link.label === "Features") {
+                          e.preventDefault();
+                          scrollToFeatures();
+                        }
+                        setIsMenuOpen(false); // always close menu
+                      }}
+
                       variants={{}}
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -116,7 +141,7 @@ export default function ResponsiveNavbar() {
                       }}
                       href={link.href}
                       className="block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent font-inter"
-                      onClick={() => setIsMenuOpen(false)}
+                    // onClick={() => setIsMenuOpen(false)}
                     >
                       {link.label}
                     </motion.a>

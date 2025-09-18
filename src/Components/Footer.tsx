@@ -231,7 +231,7 @@ const Footer = () => {
 
           {/* Footer Bottom */}
           <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 ">
-            <div className="m-auto mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#3D3D3D] w-[65%]"></div>
+            <div className="m-auto mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white w-[65%]"></div>
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
               <div className="font-inter font-medium text-[15.67px] leading-[25.5px] tracking-normal align-middle text-[#C2C2C2]">
                 © 2025 Kombineo. All rights reserved.

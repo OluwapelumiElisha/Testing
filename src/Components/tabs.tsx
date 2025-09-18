@@ -126,7 +126,7 @@ const TabCard: React.FC = () => {
                                 "linear-gradient(224.64deg, rgba(228, 150, 0, 0.8) 7.14%, #C88400 90.37%)",
                             boxShadow: "0 8px 25px rgba(255, 215, 0, 0.3)", // blurry gold shadow
                         }}
-                        className="lg:mt-10 md:mt-10 sm:mt-5 mt-0 text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 rounded-lg lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 hover:text-black"
+                        className="lg:mt-10 md:mt-10 sm:mt-5 mt-0 text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 rounded-lg lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 hover:text-[#B8860B]"
                     >
                         Essai gratuit de 7 jours
                     </button>
