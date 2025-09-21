@@ -5,6 +5,10 @@ import Challenge from '../assets/chan.svg'
 import Agence from '../assets/Agence.svg'
 import container from '../assets/Container.svg'
 import logo from '../assets/image 59.svg'
+import Agence2 from '../assets/agence2.svg'
+import challenge2 from '../assets/challenge.svg'
+import Manager2 from '../assets/manager2.svg'
+import ticket from '../assets/whitebgflame.svg'
 
 type Tab = {
     label: string;
@@ -18,12 +22,13 @@ type Tab = {
     company: string;
     reviewerImage: string;
     logo?: string;
+    img2?: string
 };
 
 const tabsData: Tab[] = [
     {
         label: "Infopreneur/Coach",
-        image: Infopreneur,
+        image: ticket,
         title: "Gagnez du temps, multipliez vos ventes",
         subtitle: "Gagnez du temps et optimisez votre business en ligne.",
         checklist: [
@@ -38,6 +43,7 @@ const tabsData: Tab[] = [
         company: "Darons du Biz",
         reviewerImage: logo,
         logo: logo,
+        img2:Infopreneur
     },
     {
         label: "Manager",
@@ -52,7 +58,8 @@ const tabsData: Tab[] = [
         company: "MarketPro",
         // reviewerImage: "/reviewer2.png",
         reviewerImage: logo,
-        logo: "/logo2.png"
+        logo: "/logo2.png",
+        img2: Manager2
     },
     {
         label: "Challenge",
@@ -67,6 +74,7 @@ const tabsData: Tab[] = [
         // reviewerImage: "/reviewer3.png",
         reviewerImage: logo,
         logo: "/logo3.png",
+        img2: challenge2
     },
     {
         label: "Agence",
@@ -81,6 +89,7 @@ const tabsData: Tab[] = [
         // reviewerImage: "/reviewer3.png",
         reviewerImage: logo,
         logo: "/logo3.png",
+        img2: Agence2
     },
 ];
 
@@ -101,7 +110,8 @@ const TabCard: React.FC = () => {
                             : "bg-gray-50 border-[#E4DFDC] border-[1px] text-gray-600 hover:bg-white"
                             }`}
                     >
-                        <img src={tab.image} alt="" />
+                    {idx === activeIndex ? <img className="w-5 h-5" src={tab.img2} alt={tab.label} /> : <img className="w-5 h-5" src={tab.image} alt={tab.label} /> }
+                        
                         {tab.label}
                     </button>
                 ))}
