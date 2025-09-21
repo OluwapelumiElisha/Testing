@@ -21,36 +21,43 @@ const features = [
     title: "Cockpit IA",
     img: app,
     description:
-      "Pas de complexité, pas d'étapes inutiles, juste une efficacité pure conçue pour des business high ticket.",
+      "Pas de complexité, pas d'étapes inutiles, juste une efficacité pure conçue pour des business hight ticket",
     testimonials: "Tibtalks, Fondateur Magic consulting",
   },
   {
     title: "Setting appel",
     img: app,
     description:
-      "Optimisez vos appels avec un système clair et efficace conçu pour les équipes performantes.",
-    testimonials: "Sophie, Head of Sales",
+      "Pas de complexité, pas d'étapes inutiles, juste une efficacité pure conçue pour des business hight ticket",
+    testimonials: "Tibtalks, Fondateur Magic consulting",
   },
   {
-    title: "Appels Closing",
+    title: "Appels de closing",
     img: app,
     description:
-      "Concluez vos ventes avec des outils qui simplifient le processus de closing.",
-    testimonials: "Marc, Sales Expert",
+      "Pas de complexité, pas d'étapes inutiles, juste une efficacité pure conçue pour des business hight ticket",
+    testimonials: "Tibtalks, Fondateur Magic consulting",
+  },
+  {
+    title: "Follow up",
+    img: app,
+    description:
+      "Pas de complexité, pas d'étapes inutiles, juste une efficacité pure conçue pour des business hight ticket",
+    testimonials: "Tibtalks, Fondateur Magic consulting",
   },
   {
     title: "KPI",
     img: app,
     description:
-      "Suivez vos KPI en temps réel et ajustez vos stratégies en toute confiance.",
-    testimonials: "Léa, Analyst",
+      "Pas de complexité, pas d'étapes inutiles, juste une efficacité pure conçue pour des business hight ticket",
+    testimonials: "Tibtalks, Fondateur Magic consulting",
   },
   {
     title: "Commissions",
     img: app,
     description:
-      "Gérez facilement les commissions et récompensez vos closers avec précision.",
-    testimonials: "Paul, Finance Manager",
+      "Pas de complexité, pas d'étapes inutiles, juste une efficacité pure conçue pour des business hight ticket",
+    testimonials: "Tibtalks, Fondateur Magic consulting",
   },
 ];
 const cards = () => {
@@ -83,6 +90,97 @@ const cards = () => {
       }
     };
   }, []);
+
+  // const [activeIndex, setActiveIndex] = useState(0)
+  // const sectionRefs = useRef<HTMLDivElement>(null)
+  // const [isScrolling, setIsScrolling] = useState(false)
+
+  // const activeFeature = features[activeIndex]
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!sectionRefs.current) return
+
+  //     const section = sectionRefs.current
+  //     const rect = section.getBoundingClientRect()
+  //     const windowHeight = window.innerHeight
+
+  //     // Check if the section is in viewport
+  //     const isInViewport = rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.3
+
+  //     if (isInViewport) {
+  //       setIsScrolling(true)
+
+  //       // Calculate scroll progress within the section
+  //       const sectionHeight = rect.height
+  //       const scrollProgress = Math.max(0, Math.min(1, (windowHeight * 0.3 - rect.top) / (sectionHeight * 0.8)))
+
+  //       // Calculate which tab should be active based on scroll progress
+  //       const newActiveIndex = Math.min(features.length - 1, Math.floor(scrollProgress * features.length))
+
+  //       setActiveIndex(newActiveIndex)
+  //     } else {
+  //       setIsScrolling(false)
+  //     }
+  //   }
+
+  //   window.addEventListener("scroll", handleScroll, { passive: true })
+  //   handleScroll() // Initial check
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll)
+  //   }
+  // }, [])
+
+  // const handleTabClick = (index: number) => {
+  //   setActiveIndex(index)
+  //   setIsScrolling(false)
+
+  //   // Re-enable scroll behavior after a short delay
+  //   setTimeout(() => {
+  //     setIsScrolling(true)
+  //   }, 1000)
+  // }
+  // const [activeIndex, setActiveIndex] = useState(0);
+  // const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
+  // const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           const index = Number(entry.target.getAttribute("data-index"));
+  //           setActiveIndex(index);
+  //         }
+  //       });
+  //     },
+  //     {
+  //       root: containerRef.current, // scroll container
+  //       threshold: 0.6, // 60% visible = active
+  //     }
+  //   );
+
+  //   featureRefs.current.forEach((ref) => {
+  //     if (ref) observer.observe(ref);
+  //   });
+
+  //   return () => {
+  //     featureRefs.current.forEach((ref) => {
+  //       if (ref) observer.unobserve(ref);
+  //     });
+  //   };
+  // }, []);
+
+  // // ✅ Scroll into view when clicking a tab
+  // const handleTabClick = (index: number) => {
+  //   setActiveIndex(index);
+  //   featureRefs.current[index]?.scrollIntoView({
+  //     behavior: "smooth",
+  //     block: "start",
+  //   });
+  // };
+
 
   const [activeIndex, setActiveIndex] = useState(0)
   const sectionRefs = useRef<HTMLDivElement>(null)
@@ -146,28 +244,6 @@ const cards = () => {
       role: "CEO",
       company: "Mindeo",
       tag: "Infopreneur",
-      bgColor: "bg-gradient-to-r from-[#5DA9B9] via-[#035E71] to-[#035E71]",
-      highlightColor: "#ffffff",
-      titleColor: "#B9F3FFCC",
-      reviewColor: "#ffffff",
-      nameColor: "#ffffff",
-      roleColor: "#FFFFFF80",
-      tagTextColor: "#111111",
-      tagBgColor: "#FFFFFF",
-      companyColor: "#FFFFFFE5",
-      title2: firstCardLogo,
-      ticket: ticket
-    },
-    {
-      image: ProfileImage,
-      highlight: "3x",
-      title: "plus de productivité",
-      review:
-        "Un plaisir de travailler avec Tom et des résultats exceptionnels pour une premiere collaboration.",
-      name: "Yomi Denzel",
-      role: "CEO",
-      company: "Mindeo",
-      tag: "Infopreneur",
       bgColor: "#FFFFFF",
       highlightColor: "#035E71",
       titleColor: "#0000004D",
@@ -179,6 +255,28 @@ const cards = () => {
       companyColor: "#035E71E5",
       title2: secondCardLogo,
       ticket: secondticket
+    },
+    {
+      image: ProfileImage,
+      highlight: "3x",
+      title: "plus de productivité",
+      review:
+        "Un plaisir de travailler avec Tom et des résultats exceptionnels pour une premiere collaboration.",
+      name: "Yomi Denzel",
+      role: "CEO",
+      company: "Mindeo",
+      tag: "Infopreneur",
+      bgColor: "bg-gradient-to-r from-[#5DA9B9] via-[#035E71] to-[#035E71]",
+      highlightColor: "#ffffff",
+      titleColor: "#B9F3FFCC",
+      reviewColor: "#ffffff",
+      nameColor: "#ffffff",
+      roleColor: "#FFFFFF80",
+      tagTextColor: "#111111",
+      tagBgColor: "#FFFFFF",
+      companyColor: "#FFFFFFE5",
+      title2: firstCardLogo,
+      ticket: ticket
     },
     {
       image: ProfileImage,
@@ -237,28 +335,6 @@ const cards = () => {
       role: "CEO",
       company: "Mindeo",
       tag: "Infopreneur",
-      bgColor: "#FFFFFF",
-      highlightColor: "#035E71",
-      titleColor: "#0000004D",
-      reviewColor: "#000000",
-      nameColor: "#035E71",
-      roleColor: "#247A8C80",
-      tagTextColor: "#ffffff",
-      tagBgColor: "bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] to-[#035E71]",
-      companyColor: "#035E71E5",
-      title2: secondCardLogo,
-      ticket: secondticket
-    },
-    {
-      image: ProfileImage,
-      highlight: "3x",
-      title: "plus de productivité",
-      review:
-        "Un plaisir de travailler avec Tom et des résultats exceptionnels pour une premiere collaboration.",
-      name: "Yomi Denzel",
-      role: "CEO",
-      company: "Mindeo",
-      tag: "Infopreneur",
       bgColor: "bg-gradient-to-r from-[#5DA9B9] via-[#035E71] to-[#035E71]",
       highlightColor: "#ffffff",
       titleColor: "#B9F3FFCC",
@@ -270,6 +346,28 @@ const cards = () => {
       companyColor: "#FFFFFFE5",
       title2: firstCardLogo,
       ticket: ticket
+    },
+    {
+      image: ProfileImage,
+      highlight: "3x",
+      title: "plus de productivité",
+      review:
+        "Un plaisir de travailler avec Tom et des résultats exceptionnels pour une premiere collaboration.",
+      name: "Yomi Denzel",
+      role: "CEO",
+      company: "Mindeo",
+      tag: "Infopreneur",
+      bgColor: "#FFFFFF",
+      highlightColor: "#035E71",
+      titleColor: "#0000004D",
+      reviewColor: "#000000",
+      nameColor: "#035E71",
+      roleColor: "#247A8C80",
+      tagTextColor: "#ffffff",
+      tagBgColor: "bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] to-[#035E71]",
+      companyColor: "#035E71E5",
+      title2: secondCardLogo,
+      ticket: secondticket
     },
     {
       image: ProfileImage,
@@ -340,7 +438,7 @@ const cards = () => {
             {/* First row */}
             <div className="overflow-hidden w-full">
               <motion.div
-                className="flex space-x-10 !w-[300%] ml-14"
+                className="flex space-x-10 lg:w-[300%] md:w-[300%] sm:w-[500%] w-[600%] ml-14"
                 variants={{}}
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{
@@ -362,7 +460,7 @@ const cards = () => {
             {/* Second row */}
             <div className="overflow-hidden w-full mt-6">
               <motion.div
-                className="flex space-x-10 !w-[300%] mr-14"
+                className="flex space-x-10 lg:w-[300%] md:w-[300%] sm:w-[500%] w-[600%] mr-14"
                 variants={{}}
                 animate={{ x: ["-50%", "0%"] }}
                 transition={{
@@ -474,6 +572,7 @@ const cards = () => {
 
         </div>
       </div>
+
       <div
         ref={sectionRefs}
         className="w-[95%] bg-gradient-to-b from-[#E0F5FF] to-[#F4F7F8] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter "
