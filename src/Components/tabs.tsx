@@ -96,7 +96,7 @@ const TabCard: React.FC = () => {
                     <button
                         key={idx}
                         onClick={() => setActiveIndex(idx)}
-                        className={`px-9 py-4 whitespace-nowrap rounded-lg text-sm font-medium transition flex justify-center gap-2 text-[#111111] border items-center ${idx === activeIndex
+                        className={`px-9 py-4 whitespace-nowrap rounded-lg text-sm font-medium transition flex justify-center gap-2 text-[#111111] border cursor-pointer items-center ${idx === activeIndex
                             ? "bg-[linear-gradient(98.23deg,#035E71_-6.67%,#5DA9B9_45.08%,#035E71_97.28%)] text-white"
                             : "bg-gray-50 border-[#E4DFDC] border-[1px] text-gray-600 hover:bg-white"
                             }`}
@@ -126,8 +126,7 @@ const TabCard: React.FC = () => {
                                 "linear-gradient(224.64deg, rgba(228, 150, 0, 0.8) 7.14%, #C88400 90.37%)",
                             boxShadow: "0 8px 25px rgba(255, 215, 0, 0.3)", // blurry gold shadow
                         }}
-                        className="lg:mt-10 md:mt-10 sm:mt-5 mt-0 text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 rounded-lg lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 hover:text-[#B8860B]"
-                    >
+                        className="lg:mt-10 md:mt-10 sm:mt-5 mt-0 cursor-pointer text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 rounded-lg lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 hover:text-black"                   >
                         Essai gratuit de 7 jours
                     </button>
                 </div>

@@ -63,7 +63,7 @@ const features = [
 const cards = () => {
   const [active, setActive] = useState<"bonjour" | "adieu">("bonjour");
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const featuresRef = useRef<HTMLDivElement | null>(null);
+  // const featuresRef = useRef<HTMLDivElement | null>(null);
   // useEffect for text switching 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -141,97 +141,45 @@ const cards = () => {
   //     setIsScrolling(true)
   //   }, 1000)
   // }
-  // const [activeIndex, setActiveIndex] = useState(0);
-  // const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
-  // const containerRef = useRef<HTMLDivElement | null>(null);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           const index = Number(entry.target.getAttribute("data-index"));
-  //           setActiveIndex(index);
-  //         }
-  //       });
-  //     },
-  //     {
-  //       root: containerRef.current, // scroll container
-  //       threshold: 0.6, // 60% visible = active
-  //     }
-  //   );
-
-  //   featureRefs.current.forEach((ref) => {
-  //     if (ref) observer.observe(ref);
-  //   });
-
-  //   return () => {
-  //     featureRefs.current.forEach((ref) => {
-  //       if (ref) observer.unobserve(ref);
-  //     });
-  //   };
-  // }, []);
-
-  // // ✅ Scroll into view when clicking a tab
-  // const handleTabClick = (index: number) => {
-  //   setActiveIndex(index);
-  //   featureRefs.current[index]?.scrollIntoView({
-  //     behavior: "smooth",
-  //     block: "start",
-  //   });
-  // };
-
-
-  const [activeIndex, setActiveIndex] = useState(0)
-  const sectionRefs = useRef<HTMLDivElement>(null)
-  const [isScrolling, setIsScrolling] = useState(false)
-
-  const activeFeature = features[activeIndex]
+  const [activeIndex, setActiveIndex] = useState(0);
+  const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRefs.current) return
-
-      const section = sectionRefs.current
-      const rect = section.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-
-      // Check if the section is in viewport
-      const isInViewport = rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.3
-
-      if (isInViewport) {
-        setIsScrolling(true)
-
-        // Calculate scroll progress within the section
-        const sectionHeight = rect.height
-        const scrollProgress = Math.max(0, Math.min(1, (windowHeight * 0.3 - rect.top) / (sectionHeight * 0.8)))
-
-        // Calculate which tab should be active based on scroll progress
-        const newActiveIndex = Math.min(features.length - 1, Math.floor(scrollProgress * features.length))
-
-        setActiveIndex(newActiveIndex)
-      } else {
-        setIsScrolling(false)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setActiveIndex(index);
+          }
+        });
+      },
+      {
+        root: containerRef.current, // scroll container
+        threshold: 0.3, // 60% visible = active
       }
-    }
+    );
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll() // Initial check
+    featureRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      featureRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
 
+  // ✅ Scroll into view when clicking a tab
   const handleTabClick = (index: number) => {
-    setActiveIndex(index)
-    setIsScrolling(false)
-
-    // Re-enable scroll behavior after a short delay
-    setTimeout(() => {
-      setIsScrolling(true)
-    }, 1000)
-  }
+    setActiveIndex(index);
+    featureRefs.current[index]?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   const cardTop = [
     {
@@ -564,7 +512,7 @@ const cards = () => {
           <div
             id="features"
             className="flex justify-center items-center mt-10">
-            <button className="bg-[linear-gradient(106.57deg,rgba(228,150,0,0.8)_14.6%,#CA8500_111.87%)] text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300">
+            <button className="bg-[linear-gradient(106.57deg,rgba(228,150,0,0.8)_14.6%,#CA8500_111.87%)] text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300 cursor-pointer">
               <span className='text-white text-[14px]  hover:text-black'>Essayez gratuitement</span>
               <img src={Enter2} alt="" className='w-[15px] h-[15px]' />
             </button>
@@ -574,72 +522,80 @@ const cards = () => {
       </div>
 
       <div
-        ref={sectionRefs}
-        className="w-[95%] bg-gradient-to-b from-[#E0F5FF] to-[#F4F7F8] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter "
+        className="w-[95%] bg-gradient-to-b from-[#E0F5FF] to-[#F4F7F8] rounded-2xl shadow-lg border-[2px] border-[#FFFFFF] m-auto mt-2 font-inter"
       >
-
-        {/* MAIN FLEX CONTAINER */}
-        <div ref={featuresRef} className="flex flex-col lg:flex-row justify-between items-center lg:items-start">
-          {/* LEFT SECTION (Tabs + Active Content) */}
-          <div className="p-6 sm:p-10 flex flex-col lg:flex-row justify-start gap-6 w-full lg:w-[60%]">
-            {/* LEFT SIDE - TABS */}
-            <div className="text-[18px] font-medium w-full lg:w-auto">
-              <h3 className="text-[#000000] font-bold">Fonctionnalités</h3>
-              <ul className="mt-2 text-[16px] space-y-2">
+          <h3 className="text-[#000000] font-bold ml-10 mt-8 lg:hidden md:block sm:block block">Fonctionnalités</h3>
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start">
+          {/* LEFT SECTION (Tabs) */}
+          <div className="text-[18px] font-medium w-full lg:w-auto sticky top-0 ">
+            <div className="ml-10 mt-14 lg:block md:hidden sm:hidden hidden">
+              <h3 className="text-[#000000] font-bold ">Fonctionnalités</h3>
+              <ul className="mt-2 text-[16px] space-y-6">
                 {features.map((feature, index) => (
                   <li
                     key={index}
                     onClick={() => handleTabClick(index)}
-                    className={`cursor-pointer transition-all duration-500 ease-in-out p-2 text-[18px] font-black rounded-lg ${activeIndex === index
-                      ? "bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent  font-semibold "
-                      : "text-[#9999998A]"
+                    className={`cursor-pointer transition-all duration-500 ease-in-out  text-[17px] font-black rounded-lg ${activeIndex === index
+                        ? "bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent font-semibold"
+                        : "text-[#9999998A]"
                       }`}
                   >
                     {feature.title}
-                    {activeIndex === index && (
-                      // <div className="w-full h-1 bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] rounded-full mt-1 animate-pulse" />
-                      <></>
-                    )}
                   </li>
                 ))}
               </ul>
-
-              {isScrolling && (
-                <div className="mt-4 text-xs text-[#5DA9B9] animate-bounce"></div>
-              )}
             </div>
+          </div>
 
-            {/* RIGHT SIDE - DISPLAY ACTIVE FEATURE */}
-            <div className="mt-8 lg:mt-12 max-w-full lg:max-w-md">
-              <div className="transition-all duration-700 ease-in-out transform">
-                <img
-                  src={activeFeature.img || "/placeholder.svg"}
-                  alt={activeFeature.title}
-                  className="rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
-                />
-                <h1 className="font-bold text-[28px] sm:text-[36px] lg:text-[43px] bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent mt-4 transition-all duration-500">
-                  {activeFeature.title}
-                </h1>
-                <p className="font-semibold mt-3 text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p className="italic font-inter text-[#757575] mt-4 sm:mt-8 text-[16px] sm:text-[18px] lg:text-[20px] transition-all duration-500 leading-relaxed">
-                  "{activeFeature.description}"
-                </p>
-                <div className="flex justify-start items-center mt-4 space-x-4 transition-all duration-500">
-                  <img
-                    src={pp || "/placeholder.svg"}
-                    alt="profile"
-                    className="w-10 h-10"
-                  />
-                  <p className="text-[#5BA7B7] font-inter font-normal text-[14px] sm:text-[16px]">
-                    {activeFeature.testimonials}
-                  </p>
+          {/* RIGHT SIDE - SCROLLABLE CONTENT */}
+          <div className="p-6 sm:p-10 flex flex-col lg:flex-row justify-start gap-6 w-full lg:w-[45%]">
+            <div className="flex">
+              <div className="mt-8 lg:mt-12 max-w-full lg:max-w-md flex">
+                <div className="pr-2">
+                  <div className="lg:space-y-56 md:space-y-20 sm:space-y-20 space-y-16">
+                    {features.map((feature, index) => (
+                      <div
+                        key={index}
+                        ref={(el) => {
+                          featureRefs.current[index] = el;
+                        }}
+                        data-index={index}
+                      >
+                        <img
+                          src={feature.img || "/placeholder.svg"}
+                          alt={feature.title}
+                          className="rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
+                        />
+
+                        <h1 className="font-bold text-[28px] sm:text-[36px] lg:text-[43px] bg-[linear-gradient(90deg,#035E71_0%,#5DA9B9_28.37%,#035E71_76.92%)] bg-clip-text text-transparent mt-4 transition-all duration-500">
+                          {feature.title}
+                        </h1>
+                        <p className="font-semibold mt-3 text-md">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <p className="italic font-inter text-[#757575] mt-4 sm:mt-8 text-[16px] sm:text-[18px] lg:text-[20px] leading-relaxed">
+                          "{feature.description}"
+                        </p>
+                        <div className="flex justify-start items-center mt-4 space-x-4">
+                          <img
+                            src={pp || "/placeholder.svg"}
+                            alt="profile"
+                            className="w-10 h-10"
+                          />
+                          <p className="text-[#5BA7B7] font-inter font-normal text-[14px] sm:text-[16px]">
+                            {feature.testimonials}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* RIGHT IMAGE SECTION */}
-          <div className="mt-8 lg:mt-16 w-full lg:w-[40%] mb-4 flex justify-center lg:justify-end">
+          <div className="mt-8 lg:mt-16 w-full lg:w-[40%] mb-4 flex justify-center lg:justify-end sticky top-24">
             <img
               src={sideImage || "/placeholder.svg"}
               alt=""
@@ -647,9 +603,6 @@ const cards = () => {
             />
           </div>
         </div>
-
-        {/* <div className="bg-[#F7FEFf] p-8 sm:p-10 rounded-bl-2xl rounded-br-2xl mt-1">
-        </div> */}
       </div>
 
       {/* </div> */}

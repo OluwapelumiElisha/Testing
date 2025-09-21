@@ -37,7 +37,7 @@ const Footer = () => {
               Zéro lead perdu, 100% de ventes maîtrisées.
             </p>
             <div className='flex justify-center items-center'>
-              <button className="bg-[linear-gradient(106.57deg,rgba(228,150,0,0.8)_14.6%,#CA8500_111.87%)] text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300">
+              <button className="bg-[linear-gradient(106.57deg,rgba(228,150,0,0.8)_14.6%,#CA8500_111.87%)] cursor-pointer text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300">
                 <span className='text-white text-[14px]  hover:text-black'>Commencez en 1 sec </span>
                 <img src={Enter2} alt="" className='w-[15px] h-[15px]' />
               </button>
@@ -236,7 +236,7 @@ const Footer = () => {
               <div className="font-inter font-medium text-[15.67px] leading-[25.5px] tracking-normal align-middle text-[#C2C2C2]">
                 © 2025 Kombineo. All rights reserved.
               </div>
-              <div className="bg-[#042E49] px-3 py-1 rounded-full text-xs sm:text-sm flex items-center gap-2">
+              <div className="bg-[#042E49] px-3 py-1 rounded-full text-xs sm:text-sm flex items-center gap-2 cursor-pointer">
                 <span className="w-2 h-2 bg-green-400 rounded-full"></span>
                 All Systems Operational
               </div>
