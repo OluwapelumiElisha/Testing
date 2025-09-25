@@ -16,7 +16,7 @@ type Tab = {
     title: string;
     subtitle: string;
     checklist: string[];
-    review: string;
+    review?: string;
     reviewer: string;
     role: string;
     company: string;
@@ -33,8 +33,8 @@ const tabsData: Tab[] = [
         subtitle: "Gagnez du temps et optimisez votre business en ligne.",
         checklist: [
             "KPI en temps réel",
-            "Suivi Follow-up optimisé",
-            "Calcul automatique des commissions",
+            "Suivi Follow up optimisé",
+            "Calcul de commissions automatique",
         ],
         review:
             "Kombineo est si simple à utiliser, facile à connecter, et les fonctionnalités vous feront gagner beaucoup de temps.",
@@ -66,7 +66,7 @@ const tabsData: Tab[] = [
         image: Challenge,
         title: "Gagnez du temps, multipliez vos ventes",
         subtitle: "Conçu pour s'adapter à vos besoins business.",
-        checklist: ["Absorbe du volume en instantané", "Système setting avancée", "Follow up chiurgicale sans flou"],
+        checklist: ["Absorbe du volume en instantané", "Système setting avancée", "Follow up chirurgicale sans flou"],
         review: "Un outil puissant qui s'adapte vraiment à mes besoins.",
         reviewer: "Marc Lopez",
         role: "Entrepreneur",
@@ -146,7 +146,7 @@ const TabCard: React.FC = () => {
 
             {/* Right Side */}
             <div className="flex-1 space-y-4 lg:-ml-5 md:-ml-5 sm:-ml-5 -ml-0">
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                     {activeTab.checklist.map((item, idx) => (
                         <li key={idx} className="flex items-center space-x-1">
                             {/* <span className="w-5 h-5 bg-gradient-to-r from-[#5DA9B9] to-[#035E71] text-white flex items-center justify-center rounded-full text-sm">
@@ -159,18 +159,18 @@ const TabCard: React.FC = () => {
                 </ul>
 
                 {/* Testimonial */}
-                <div className="lg:flex md:flex sm:flex block justify-center items-start gap-3 border-t border-[#F1F0EE] pt-2 mt-4">
-                    <img
+                <div className="lg:flex md:flex sm:flex block justify-center items-start gap-3 border-t border-[#F1F0EE] pt-2 mt-6">
+                    {/* <img
                         src={activeTab.reviewerImage}
                         alt={activeTab.reviewer}
                         className="w-16 h-auto rounded-full object-cover pt-6"
-                    />
+                    /> */}
                     <div className="flex-1">
-                        <p className="text-gray-800 font-semibold text-start">{activeTab.reviewer}</p>
+                        {/* <p className="text-gray-800 font-semibold text-start">{activeTab.reviewer}</p>
                         <p className="text-sm text-gray-500 text-start">
                             {activeTab.role} @ {activeTab.company}
-                        </p>
-                        <p className="text-sm italic text-gray-600 mt-1 text-start">
+                        </p> */}
+                        <p className="text-sm italic text-gray-600 mt-1 text-center mt-5">
                             "{activeTab.review}"
                         </p>
                     </div>

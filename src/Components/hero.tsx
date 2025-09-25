@@ -48,7 +48,8 @@ const Hero = () => {
 
           {/* Subheading */}
           <p className="text-md md:text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-pretty">
-            Chaque prospect suivi, chaque KPI en direct : Kombineo centralise tout dans un CRM pensé pour les business high-ticket.
+            {/* Chaque prospect suivi, chaque KPI en direct : Kombineo centralise tout dans un CRM pensé pour les business high-ticket. */}
+            Le seul CRM qui transforme tous vos leads en opportunité d’affaires : Kombineo centralise tout dans un CRM pensé pour les business high-ticket.
           </p>
 
           {/* CTA Button */}
@@ -58,7 +59,7 @@ const Hero = () => {
                 background:
                   "radial-gradient(80% 120% at 50% 100%, rgba(228, 165, 32, 0.65) 0%, rgba(200, 132, 0, 0.9) 100%)",
               }}
-              className="text-white lg:px-8 cursor-pointer md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-200"
+              className="text-white lg:px-8 cursor-pointer md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-3 md:space-x-2 sm:space-x-2 space-x-1 shadow-amber-200"
             >
               <span className="text-white text-[14px] hover:text-black transition-colors duration-300">
                 Essayez gratuitement
@@ -66,7 +67,7 @@ const Hero = () => {
               <img src={Enter2} alt="" className="w-[15px] h-[15px]" />
             </button>
 
-            <button className="bg-[#FFFFFF] cursor-pointer hover:text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1">
+            <button className="bg-[#FFFFFF] cursor-pointer hover:text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-2 md:space-x-2 sm:space-x-2 space-x-0">
               <span className='bg-gradient-to-r from-[#035E71] via-[#5DA9B9] to-[#035E71] bg-clip-text text-transparent hover:text-black text-[14px]'>Voir démo</span>
               <img src={Enter} alt="" className='w-[25px] h-[25px]' />
             </button>
@@ -93,7 +94,7 @@ const Hero = () => {
             {/* <img src={star} alt="" /> */}
           </div>
 
-          <div className='w-[100%] h-[500px] m-auto bg-[#D9D9D9] mt-7 rounded-xl z-50 relative'>
+          <div className='w-[100%] h-[500px] m-auto bg-[#D9D9D9] mt-7 rounded-xl z-0 relative'>
 
           </div>
         </div>

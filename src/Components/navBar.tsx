@@ -13,7 +13,7 @@ export default function ResponsiveNavbar() {
 
   const navigationLinks = [
     { href: "/", label: "Accueil" },
-    { href: "", label: "Features" },
+    { href: "", label: "Fonctionnalités" },
     { href: "/pricing", label: "Prix" },
   ]
 
@@ -47,7 +47,7 @@ export default function ResponsiveNavbar() {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => {
-                    if (link.label === "Features") {
+                    if (link.label === "Fonctionnalités") {
                       e.preventDefault();
                       scrollToFeatures()
                     }

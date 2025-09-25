@@ -51,14 +51,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       <img
         src={image}
         alt={name}
-        className="w-[93px] lg:h-auto md:h-40 sm:h-auto h-auto rounded-2xl object-cover"
+        className="w-[93px] lg:h-[30vh] md:h-52 sm:h-72 h-48 rounded-2xl object-cover"
       />
 
       {/* Content */}
       <div className="flex-1 lg:mx-3 md:mx-3 sm:mx-3 mx-1 my-0 font-inter">
         <div className="">
           <div className="flex justify-between items-center">
-            <h3 className="lg:text-[25px] md:text-[25px] sm:text-[25px] text-[20px] font-semibold flex justify-between items-center lg:space-x-1 md:space-x-1 sm:space-x-1 space-x-0 " style={{ color: titleColor }}>
+            <h3 className="lg:text-[22px] md:text-[25px] sm:text-[25px] text-[20px] font-semibold flex justify-between items-center lg:space-x-1 md:space-x-1 sm:space-x-1 space-x-0 " style={{ color: titleColor }}>
               {/* <div> */}
               <span className="font-semibold" style={{ color: highlightColor }}>
                 {highlight}
@@ -69,17 +69,17 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
             <img
               src={title2}
               alt="icon"
-              className="w-[50px] h-[12px] sm:w-[65px] sm:h-[15px] md:w-[75px] md:h-[18px] lg:w-[85px] lg:h-[20px]"
+              className="w-[50px] h-[12px] sm:w-[65px] sm:h-[15px] md:w-[75px] md:h-[18px] lg:w-[50px] lg:h-[20px]"
             />
           </div>
 
 
-          <p className="italic mt-1 text-start leading-5 lg:text-[12px] md:text-[12px] sm:text-[12px] text-[12px]" style={{ color: reviewColor }}>
+          <p className="italic mt-3 text-start leading-5 lg:text-[12px] md:text-[12px] sm:text-[12px] text-[12px]" style={{ color: reviewColor }}>
             "{review}"
           </p>
           <div className="lg:flex md:flex sm:flex flex justify-between items-center">
             <div className="mt-3">
-              <p className="font-semibold" style={{ color: nameColor }}>
+              <p className="font-semibold text-start" style={{ color: nameColor }}>
                 {name}
               </p>
               <p className="text-sm font-medium" style={{ color: roleColor }}>

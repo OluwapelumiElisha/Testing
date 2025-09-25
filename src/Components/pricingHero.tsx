@@ -2,7 +2,8 @@ import calendar from '../assets/Calendar.svg'
 import arrow from '../assets/PricingArrow.svg'
 import task from '../assets/Tasks.svg'
 import Navbar from './navBar'
-import bgImage from "../assets/bg.svg";
+// import bgImage from "../assets/bg.svg";
+import bgImage from "../assets/NewBg.svg";
 import { useState } from 'react';
 import Plans from '../Components/plans'
 const Hero = () => {

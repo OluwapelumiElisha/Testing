@@ -38,7 +38,7 @@ const Footer = () => {
             </p>
             <div className='flex justify-center items-center'>
               <button className="bg-[linear-gradient(106.57deg,rgba(228,150,0,0.8)_14.6%,#CA8500_111.87%)] cursor-pointer text-white lg:px-8 md:px-8 sm:px-5 px-1 py-3 font-semibold mb-12 shadow-md rounded-lg flex justify-center items-center lg:space-x-5 md:space-x-5 sm:space-x-3 space-x-1 shadow-amber-300">
-                <span className='text-white text-[14px]  hover:text-black'>Commencez en 1 sec </span>
+                <span className='text-white text-[14px]  hover:text-black'>Commencez en 1 clic </span>
                 <img src={Enter2} alt="" className='w-[15px] h-[15px]' />
               </button>
             </div>
@@ -102,7 +102,7 @@ const Footer = () => {
             {/* <div className="w-[50%] m-auto h-[2px] bg-white -mt-20"></div> */}
           </div>
         </div>
-        <div
+        {/* <div
           className="absolute top-16 z-0"
           style={{
             borderTop: "2px solid",
@@ -111,7 +111,18 @@ const Footer = () => {
             borderImageSlice: 1,
             width: "90%", // optional: make the border span the container
           }}
+        ></div> */}
+        <div
+          className="absolute top-16 z-0"
+          style={{
+            borderTop: "2px solid",
+            borderImage:
+              "linear-gradient(90deg, #035E71 0%, #5DA9B9 50%, #2D8193 100%)",
+            borderImageSlice: 1,
+            width: "90%",
+          }}
         ></div>
+
       </div>
 
       {/* Footer Section */}
@@ -123,7 +134,7 @@ const Footer = () => {
               <h3 className="font-inter font-semibold text-[18.75px] leading-[30px] tracking-normal text-left align-middle">
                 <br />
               </h3>
-              <div className="font-inter font-medium text-[14.73px] leading-[28px] align-middle text-[#C2C2C2]  cursor-pointer pt-2">
+              <div className="font-inter font-medium text-[14.73px] leading-[28px] align-middle text-[#FFFFFF]  cursor-pointer pt-2">
                 <p>1,000+ sociétés utilisent</p>
                 <p>Kombineo pour optimiser</p>
                 <p>100% de leurs leads</p>
@@ -135,7 +146,7 @@ const Footer = () => {
               <h3 className="font-inter font-semibold text-[18.75px] leading-[30px] tracking-normal text-left align-middle">
                 Commencez
               </h3>
-              <div className="font-inter font-medium text-[14.13px] leading-[40px] align-middle text-[#C2C2C2]  cursor-pointer">
+              <div className="font-inter font-medium text-[14.13px] leading-[32px] align-middle text-[#C2C2C2]  cursor-pointer">
                 <p className="">Obtenir une démo</p>
                 <p className="">Commencez gratuitement</p>
                 <p className="">Sign in</p>
@@ -146,7 +157,7 @@ const Footer = () => {
               <h3 className="font-inter font-semibold text-[18.75px] leading-[30px] tracking-normal text-left align-middle">
                 Kombineo CRM
               </h3>
-              <div className="font-inter font-medium text-[14.73px] leading-[40px] align-middle text-[#C2C2C2]  cursor-pointer">
+              <div className="font-inter font-medium text-[14.73px] leading-[32px] align-middle text-[#C2C2C2]  cursor-pointer">
                 <p>Fonctionnnalités</p>
                 <p>Prix</p>
                 <p>Témoignages</p>
@@ -159,7 +170,7 @@ const Footer = () => {
               <h3 className="font-inter font-semibold text-[18.75px] leading-[30px] tracking-normal text-left align-middle">
                 Contact
               </h3>
-              <div className="font-inter font-medium text-[14.73px] leading-[40px] align-middle text-[#C2C2C2]  cursor-pointer">
+              <div className="font-inter font-medium text-[14.73px] leading-[32px] align-middle text-[#C2C2C2]  cursor-pointer">
                 <p className="">info@kombineo.com</p>
                 <p className="">
                   <img src={whatsapp} className="w-4 inline" alt="" />
@@ -241,13 +252,13 @@ const Footer = () => {
                 All Systems Operational
               </div>
               <div className="flex items-center gap-4 sm:gap-6">
-               
+
 
                 <div className="flex gap-4 text-xs sm:text-sm text-teal-200">
-                  <span className="font-inter font-medium text-[15.67px] leading-[25.5px] tracking-normal align-middle text-[#C2C2C2]">
+                  <span className="font-inter font-medium text-[12.67px] leading-[25.5px] tracking-normal align-middle text-[#C2C2C2]">
                     Politique de confidentialité
                   </span>
-                  <span className="font-inter font-medium text-[15.67px] leading-[25.5px] tracking-normal align-middle text-[#C2C2C2]">
+                  <span className="font-inter font-medium text-[12.67px] leading-[25.5px] tracking-normal align-middle text-[#C2C2C2]">
                     Conditions générales
                   </span>
                 </div>

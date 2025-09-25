@@ -10,37 +10,44 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
     {
-        question: "What Is The Scent/Smell Of The Product?",
+        question: "À qui s’adresse Kombineo ?",
         answer:
-            "Our serum has a light, clean scent that fades quickly after application.",
+            " Kombineo a été conçu pour les closers, setters, managers et infopreneurs qui évoluent dans l’univers du high-ticket. Que vous soyez indépendant ou en équipe, la plateforme s’adapte à votre organisation.",
     },
     {
-        question: "How And When Should I Apply The Invigorating Vitamin C Serum?",
+        question: "Quelle est la différence entre Kombineo et un CRM classique ?",
         answer:
-            "Apply once daily on clean, dry skin before moisturizer and SPF.",
-    },
-    {
-        question:
-            "Is It Safe To Use The Vitamin C Serum While Pregnant Or Breast Feeding?",
-        answer:
-            "Always consult your healthcare provider. Our formula avoids known pregnancy irritants, but individual guidance is best.",
+            " Les CRM généralistes sont pensés pour tous… et donc pour personne en particulier. Kombineo, lui, a été développé par et pour des closers. Chaque fonctionnalité répond à un besoin concret du terrain : suivi des leads, commissions, KPI de closing, cockpit IA, etc.",
     },
     {
         question:
-            "When Will I Start Seeing Results After Using The Invigorating Vitamin C Serum?",
+            "Mes données sont-elles sécurisées ?",
         answer:
-            "Most users notice brighter-looking skin within 2–4 weeks of consistent use.",
-    },
-    {
-        question: "Is It Safe To Use This Serum On Sensitive Skin?",
-        answer:
-            "Yes, begin 2–3 times a week and build up. Patch test first to ensure compatibility.",
+            " Absolument. La sécurité des données est une priorité. Toutes vos informations sont stockées de manière sécurisée et restent confidentielles.",
     },
     {
         question:
-            "Can The Invigorating Vitamin C Serum Be Used With A Retinol Or Retinoid?",
+            "Est-ce que Kombineo peut s’intégrer avec mes outils actuels ?",
         answer:
-            "Yes, but with caution. Vitamin C (ascorbic acid) and retinoids can both be part of an effective routine, but using them together at the same time—especially on sensitive skin—may cause irritation. Space usage (AM vs PM) or alternate days.",
+            " Oui, Kombineo est conçu pour fonctionner avec vos tunnels, calendriers, emails et autres outils. Vous ne changez pas vos habitudes, vous les optimisez.",
+    },
+    {
+        question: "Est-ce que Kombineo me permet de suivre les commissions de mon équipe ?",
+        answer:
+            "Exactement. Chaque closer ou setter peut suivre ses résultats en temps réel, et les managers gagnent un temps précieux avec les commissions calculées automatiquement.",
+    },
+    {
+        question:
+            "En quoi le Cockpit IA m’aide concrètement ?",
+        answer:
+            "Le Cockpit IA analyse vos appels, identifie vos forces et vos axes d’amélioration, et vous permet de progresser call après call. C’est comme avoir un coach intégré, disponible 24/7.",
+        // defaultOpen: true,
+    },
+     {
+        question:
+            "EPuis-je gérer plusieurs missions ou clients en même temps ?",
+        answer:
+            "Oui, Kombineo a été conçu pour les closers multi-missions. Vous pouvez suivre chaque deal, chaque commission et chaque KPI sans jamais mélanger vos données.",
         defaultOpen: true,
     },
 ];
@@ -81,7 +88,7 @@ const AccordionItem: React.FC<{
                 </span>
                 <div className="flex items-center gap-3">
                     {
-                        open ?  <img src={minus} alt="" className="w-7 h-7" /> : <img src={plus} alt="" className="w-7 h-7" />
+                        open ?  <img src={minus} alt="" className="w-7 h-7 cursor-pointer" /> : <img src={plus} alt="" className="w-7 h-7 cursor-pointer" />
                     }
                 </div>
             </button>
