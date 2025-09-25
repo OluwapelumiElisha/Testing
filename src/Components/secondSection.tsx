@@ -1,4 +1,7 @@
 import TestimonialCard from "./TestimonialCard";
+// // import ProfileImage from "../assets/image 56.svg";
+// import firstCardLogo from "../assets/image 62.svg";
+// import secondCardLogo from "../assets/image 63.svg";
 import { motion, AnimatePresence } from "framer-motion";
 import Tabs from "./tabs";
 import ticket from "../assets/whitebgflame.svg";
@@ -596,7 +599,9 @@ const Cards = () => {
 
             {/* MIDDLE CONTENT - Vertical sliding features */}
             <div
-              className="flex items-center justify-center flex-1 h-full mx-0 overflow-hidden lg:mx lg:-ml-72 md:-ml-10 sm:-ml-20 ml-8 lg:pt-[89%] md:pt-[101%] sm:pt-[138%] pt-[250%]"
+              // className="flex items-center justify-center flex-1 h-full mx-0 overflow-hidden lg:mx lg:-ml-72 md:-ml-10 sm:-ml-20 ml-8 lg:pt-[89%] md:pt-[101%] sm:pt-[138%] pt-[160%]"
+              className="lg:ml-72 md:ml-10 sm:ml-20 ml-8 overflow-hidden mb-10"
+
               role="tabpanel"
               aria-live="polite"
             >

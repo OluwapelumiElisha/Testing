@@ -5,3 +5,38 @@ html {
   scroll-behavior: smooth;
 }
 
+.my-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  height: 100%;
+  margin-left: 2rem;   /* ml-8 */
+  margin-right: 0;     /* mx-0 */
+  overflow: hidden;
+  padding-top: 170%;   /* pt-[170%] */
+}
+
+/* sm: ≥640px */
+@media (min-width: 640px) {
+  .my-container {
+    margin-left: -5rem;   /* sm:-ml-20 */
+    padding-top: 138%;    /* sm:pt-[138%] */
+  }
+}
+
+/* md: ≥768px */
+@media (min-width: 768px) {
+  .my-container {
+    margin-left: -2.5rem; /* md:-ml-10 */
+    padding-top: 101%;    /* md:pt-[101%] */
+  }
+}
+
+/* lg: ≥1024px */
+@media (min-width: 1024px) {
+  .my-container {
+    margin-left: -18rem;  /* lg:-ml-72 */
+    padding-top: 89%;     /* lg:pt-[89%] */
+  }
+}
